@@ -1,5 +1,6 @@
 import styles from './chatbox.module.css';
 import { useState, useEffect, useRef } from 'react';
+
 import Welcome from './Welcome/welcome';
 
 const Chatbox = () => {
@@ -71,7 +72,11 @@ const Chatbox = () => {
             <div className={styles.chatInputholder}>
                 
                 <input placeholder='Ask me anything ...' className={styles.chatInputTextarea} value={input} onChange={(e) => setInput(e.target.value)}></input>
-                <button onClick={handleSend} className={styles.sendBtn}>Send</button>
+                <button onClick={handleSend} className={input !== "" ? styles.sendBtn : null} disabled = {input === ''}>send
+                
+                
+                </button>
+                
 
             </div>
         </section>

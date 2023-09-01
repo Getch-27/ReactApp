@@ -94,8 +94,11 @@ border: 1px solid #d3d0d0;
 
 }
 .sendBtn{
-    border: 2px solid #3b3abe;
+    border: 1px solid #3b3abe;
+    background-color: #3b3abe;
     border-radius: 15px;
+    color: #fff;
+    font-weight: 600;
     
     
 }
@@ -104,5 +107,5 @@ border: 1px solid #d3d0d0;
     color: white;
 }
 .chatInputTextarea:focus{
-    border: 2px solid #3b3abe;
+    border: 1px solid #3b3abe;
 }
