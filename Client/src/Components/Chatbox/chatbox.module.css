@@ -78,7 +78,7 @@
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content:space-evenly;
+    justify-content:;
     bottom: 0; right: 0; left: 250px;
 
 }
