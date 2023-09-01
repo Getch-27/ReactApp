@@ -101,7 +101,7 @@ const Chatbox = () => {
       </div>
 
       <div className={styles.chatInputholder}>
-       <div style={{with:"30%"}}> {typingAnimation ? <TypingAnimation /> : null}</div>
+        {typingAnimation ? <TypingAnimation /> : null}
         <input
           placeholder="Ask me anything ..."
           className={styles.chatInputTextarea} // Use the correct CSS class

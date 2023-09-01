@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-     width: var(--uib-size);
+    width: var(--uib-size);
     height: var(--uib-size);
    }
    
