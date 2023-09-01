@@ -9,9 +9,12 @@ const Chatbox = () => {
     const [input, setInput] = useState("");
     const [messages, setMessages] = useState([]);
     const autoScrolled = useRef(null);
+    const [typingAnimation ,setTyping] = useState(false)
     
 
     const handleSend = async (e) => {
+      
+
         if (e){
             e.preventDefault();
         }
@@ -26,7 +29,7 @@ const Chatbox = () => {
             },
             body: JSON.stringify({ question: input })
           });
-      
+          setTyping(true);
           if (!response.ok) {
             throw new Error('Network response was not ok');
           }
@@ -38,6 +41,7 @@ const Chatbox = () => {
             { text: data.answer, isUser: false }
           ]);
           setInput("");
+          setTyping(false);
           console.log(data.answer);
         } catch (error) {
           console.error('Error:', error);
@@ -50,7 +54,7 @@ const Chatbox = () => {
         });
 
          
-       
+     
     return (
         <section className={styles.chatbox} ref={autoScrolled}>
           
@@ -71,7 +75,7 @@ const Chatbox = () => {
             </div>
             
             <div className={styles.chatInputholder}>
-            <TypingAnimation />
+                {typingAnimation ? <TypingAnimation /> : null}
                 <input placeholder='Ask me anything ...' className={styles.chatInputTextarea} value={input} onChange={(e) => setInput(e.target.value)}></input>
                 <button onClick={handleSend} className={input !== "" ? styles.sendBtn : null} disabled = {input === ''}>send</button>
                

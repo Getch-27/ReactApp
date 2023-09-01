@@ -1,7 +1,7 @@
 .newtons-cradle {
     --uib-size: 45px;
     --uib-speed: 1.2s;
-    --uib-color: #47455470;
+    --uib-color: #3a3abe8e;
     position: relative;
     display: flex;
     align-items: center;
