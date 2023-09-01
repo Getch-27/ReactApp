@@ -76,6 +76,9 @@
 .chatInputholder{
     padding: 10px;
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
     bottom: 0; right: 0; left: 250px;
 
 }

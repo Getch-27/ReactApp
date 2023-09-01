@@ -2,6 +2,7 @@ import styles from './chatbox.module.css';
 import { useState, useEffect, useRef } from 'react';
 
 import Welcome from './Welcome/welcome';
+import TypingAnimation from './typingAnim/TypingAnimation';
 
 const Chatbox = () => {
 
@@ -48,11 +49,11 @@ const Chatbox = () => {
           autoScrolled.current.scrollTop = autoScrolled.current.scrollHeight;
         });
 
-
-
+         
+       
     return (
         <section className={styles.chatbox} ref={autoScrolled}>
-            
+          
             <Welcome handleSend={handleSend} input={input} setInput={setInput} setMessages={setMessages}/>
 
             <div className={styles.chatWrapper}>
@@ -68,16 +69,13 @@ const Chatbox = () => {
             ))}
             
             </div>
-
+            
             <div className={styles.chatInputholder}>
-                
+            <TypingAnimation />
                 <input placeholder='Ask me anything ...' className={styles.chatInputTextarea} value={input} onChange={(e) => setInput(e.target.value)}></input>
-                <button onClick={handleSend} className={input !== "" ? styles.sendBtn : null} disabled = {input === ''}>send
-                
-                
-                </button>
-                
-
+                <button onClick={handleSend} className={input !== "" ? styles.sendBtn : null} disabled = {input === ''}>send</button>
+               
+          
             </div>
         </section>
     )
