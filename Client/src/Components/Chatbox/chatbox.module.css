@@ -1,10 +1,11 @@
 .chatbox{
-    height: 90%;
+    height: 80%;
     flex: 1;
     float: left;
     background-color: #fff;
     position: relative;
     overflow: auto;
+    padding-top: 5%;
     
 }
 .chatWrapper{
