@@ -10,7 +10,10 @@ const Chatbox = () => {
     
 
     const handleSend = async (e) => {
-        e.preventDefault();
+        if (e){
+            e.preventDefault();
+        }
+        
         console.log('From input: ', input);
       
         try {
@@ -49,7 +52,7 @@ const Chatbox = () => {
     return (
         <section className={styles.chatbox} ref={autoScrolled}>
             
-            <Welcome />
+            <Welcome handleSend={handleSend} input={input} setInput={setInput} setMessages={setMessages}/>
 
             <div className={styles.chatWrapper}>
 
