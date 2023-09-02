@@ -44,6 +44,17 @@
 }
 .avatarUser{
     background-color: #eeeeee;
+    background-image: url("/../Client/public/vite.svg");
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+
+}
+
+.avatar{
+    background-color: #eeeeee;
+    background-image: url("/../Client/public/vite.svg");
     border-radius: 50%;
     width: 25px;
     height: 25px;
@@ -79,37 +90,44 @@
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content:first space-evenly;
     bottom: 0; right: 0; left: 250px;
 
 }
+.AnimationContainer{
+   width: 10%;
+
+}
+.InputContainer{
+    background-color: white;
+    width: 80%;
+    height: 60px;
+    border:#3b3abe solid 2px;
+    display: flex;
+    justify-content:space-around;
+    overflow: hidden;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0 8px 4px 0 rgba(190, 189, 189, 0.5);
+}
+
 .chatInputTextarea{
 background-color: white;
-width: 60%;
-border-radius: 20px;
+width: 90%;
 border: none;
-margin: 12px;
 outline: none;
-box-shadow: 0 8px 4px 0 rgba(190, 189, 189, 0.5);
 height: 25px;
-padding: 20px;
 font-size: 15px;
-border: 1px solid #d3d0d0;
+
 
 }
 .sendBtn{
-    border: 1px solid #3b3abe;
-    background-color: #3b3abe;
+    border: 1px solid #3a3abe94;
+    background-color: #3a3abe94;
     border-radius: 15px;
+    outline: none;
+   
     color: #fff;
     font-weight: 600;
-    
-    
 }
-.sendBtn:hover{
-    background-color: #3b3abe;
-    color: white;
-}
-.chatInputTextarea:focus{
-    border: 1px solid #3b3abe;
-}
+

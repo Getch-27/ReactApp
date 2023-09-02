@@ -9,7 +9,7 @@ function TypingAnimation(){
          <div className="newtons-cradle__dot"></div>
          <div className="newtons-cradle__dot"></div>
           <div className="newtons-cradle__dot"></div>
-        <div className="newtons-cradle__dot"></div>
+         <div className="newtons-cradle__dot"></div>
         </div>
 
     )
