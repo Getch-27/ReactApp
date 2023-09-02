@@ -1,0 +1,25 @@
+.welcome{
+    overflow: auto;
+    height: 70vh;
+}
+.promptContainer{
+    display: flex;
+    justify-content:center;
+}
+
+.prompt{
+    margin: 10px;
+}
+
+.promptTitle{ 
+    font-size: 20px;
+
+}
+
+.promptContent{
+    border: 1px solid black;
+    height: 100px;
+    width: 200px;
+    padding: 20px;
+    
+}
