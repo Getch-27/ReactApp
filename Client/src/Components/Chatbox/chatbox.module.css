@@ -1,0 +1,107 @@
+.chatbox{
+    height: 90%;
+    flex: 1;
+    float: left;
+    background-color: #fff;
+    position: relative;
+    overflow: auto;
+    
+}
+.chatWrapper{
+    padding: 15px;
+    
+}
+.chatLogUser{
+    padding: 10px;
+    display: flex;
+    position: relative;
+    margin: 5px;
+    
+
+}
+.chatLogAi{
+    padding: 10px;
+    display: flex;
+    position: relative;
+    margin: 5px;
+
+}
+.chatMessageUser{
+    padding: 12px;
+    display: flex;
+    padding-right: 20%;
+
+}
+.chatMessageAi{
+    padding: 12px;
+    display: flex;
+    margin-left: auto;
+    margin-right: 0;
+    padding-left: 20%;
+    
+}
+.avatarUser{
+    background-color: #eeeeee;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin-top: 10px;
+
+}
+
+.messageUser{
+    padding: 10px;
+    background-color: #3b3abe;
+    color: white;
+    margin-left: 5px;
+    text-align: right;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    
+    
+}
+.messageAi{
+    padding: 8px;
+    margin-left: 10px;
+    text-align: left;
+    background-color: #eeeeee;
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
+    
+
+}
+.chatInputholder{
+    padding: 10px;
+    position: fixed;
+    bottom: 0; right: 0; left: 250px;
+
+}
+.chatInputTextarea{
+background-color: white;
+width: 60%;
+border-radius: 20px;
+border: none;
+margin: 12px;
+outline: none;
+box-shadow: 0 8px 4px 0 rgba(190, 189, 189, 0.5);
+height: 25px;
+padding: 20px;
+font-size: 15px;
+border: 1px solid #d3d0d0;
+
+}
+.sendBtn{
+    border: 2px solid #3b3abe;
+    border-radius: 15px;
+    
+    
+}
+.sendBtn:hover{
+    background-color: #3b3abe;
+    color: white;
+}
+.chatInputTextarea:focus{
+    border: 2px solid #3b3abe;
+}
