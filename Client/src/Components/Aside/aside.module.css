@@ -1,0 +1,7 @@
+.aside{
+    width: 240px;
+    border: 1px solid white;
+    height: 100vh;
+    float: left;
+    background-color: #eeeeee;
+}
