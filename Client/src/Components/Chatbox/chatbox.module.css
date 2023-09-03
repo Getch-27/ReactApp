@@ -1,5 +1,5 @@
 .chatbox{
-    height: 80%;
+    height: 76%;
     flex: 1;
     float: left;
     background-color: #fff;
@@ -7,9 +7,13 @@
     overflow: auto;
     padding-top: 5%;
     
+    
+    
 }
 .chatWrapper{
     padding: 15px;
+    
+    
     
 }
 .chatLogUser{
@@ -31,14 +35,16 @@
     padding: 12px;
     display: flex;
     padding-right: 20%;
+    /*border: 1px solid black;*/
 
 }
 .chatMessageAi{
     padding: 12px;
     display: flex;
-   
+    /* border: 1px solid black; */
     width: 70%;
     margin-right: 0;
+    margin-left: 10%;
    
     
 }
