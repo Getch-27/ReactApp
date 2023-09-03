@@ -30,12 +30,12 @@ const Welcome = (props) => {
                         What are the legal requirements that I need to be aware of when starting a business? 
                        </a></div>
                 </div>
-
+          
                 <div className={styles.prompt}>
                     <p className={styles.promptTitle}>💡 Instant Legal Answers</p>
                     <div className={styles.promptContent}>
-                        <a className={styles.starterQuestion} onClick={() => handleSendMessage('What licenses or registrations are required to operate my small business, and how can I obtain them?')}>
-                        What licenses or registrations are required to operate my small business, and how can I obtain them? 
+                        <a className={styles.starterQuestion} onClick={() => handleSendMessage('What are the legal requirements that I need to be aware of when starting a business?')}>
+                        What licenses or registrations are required to operate my small business, and how can I obtain them?  
                        </a></div>
                 </div>
 
