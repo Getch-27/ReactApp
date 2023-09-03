@@ -32,7 +32,7 @@ const Welcome = (props) => {
             <div className={styles.prompt}>
                     <p className={styles.promptTitle}>🖐️ Ask Anything Legal</p>
                     <div className={styles.promptContent}>
-                        <a className={styles.starterQuestion} onClick={() => handleSendMessage('What are the legal requirements that I need to be aware of when starting a business?')}>
+                        <a className={styles.starterQuestion} onClick={() => handleSendMessage('What are the legal steps I need to follow to register my startup in Ethiopia?')}>
                         What are the legal steps I need to follow to register my startup in Ethiopia?
                        </a></div>
                 </div>
@@ -41,7 +41,7 @@ const Welcome = (props) => {
                 <div className={styles.prompt}>
                     <p className={styles.promptTitle}>💡 Instant Legal Answers</p>
                     <div className={styles.promptContent}>
-                        <a className={styles.starterQuestion} onClick={() => handleSendMessage('What are the legal requirements that I need to be aware of when starting a business?')}>
+                        <a className={styles.starterQuestion} onClick={() => handleSendMessage(' What are the legal options available to individuals who have been victims of domestic violence in Ethiopia, and how can they seek protection?')}>
                         What are the legal options available to individuals who have been victims of domestic violence in Ethiopia, and how can they seek protection?
                        </a></div>
                 </div>

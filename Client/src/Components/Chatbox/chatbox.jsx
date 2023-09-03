@@ -38,6 +38,7 @@ const Chatbox = () => {
 
     // Display typing animation
     setTypingAnimation(true);
+   
 
     try {
       // Send a POST request to the AI server
@@ -95,7 +96,8 @@ const Chatbox = () => {
   return (
     <section className={styles.chatbox} ref={autoScrolled}>
       {/* Welcome message and input */}
-      <Welcome
+
+      <Welcome style ={{displayContext}}
         handleSend={handleSend}
         input={input}
         setInput={setInput}
@@ -104,40 +106,32 @@ const Chatbox = () => {
 
       {/* Display chat messages */}
       <div className={styles.chatWrapper}>
-        {messages.map((message, index) => (
-          <div key={index} className={message.isUser ? styles.chatLogUser : styles.chatLogAi}>
-            <div className={message.isUser ? styles.chatMessageUser : styles.chatMessageAi}>
-             
-     
+  {/* Container for the entire chat */}
+  {messages.map((message, index) => (
+    <div key={index} className={message.isUser ? styles.chatLogUser : styles.chatLogAi}>
+      {/* Individual chat message container */}
+      <div className={message.isUser ? styles.chatMessageUser : styles.chatMessageAi}>
+        {/* User avatar if the message is from the user */}
+        {message.isUser ? <img alt="" src={User} className={styles.UserAvatar} /> : null}
 
+        <div className={message.isUser ? styles.messageUser : styles.messageAi}>
+          {/* Display either the message text or AI response based on conditions */}
+          {index === messages.length - 1 ? (message.isUser ? (message.text) : (displayResponse)) : (message.text)}
 
-
-
-              
-              {message.isUser ? <img alt="" src={User} className={styles.UserAvatar} /> : null}
-
-              <div className={message.isUser ? styles.messageUser : styles.messageAi}>
-                {index === messages.length - 1 ? (message.isUser ? (message.text) : (displayResponse)) : (message.text)}
-
-                {!message.isUser && !typingAnimation && (
-                  
-                  <MessageContext 
-                    msgContext ={message.context}
-                  />
-                  
-                  
-                
-                )}
-              </div>
-              {!message.isUser ? <img alt="" src={Robot} className={styles.AiAvatar} /> : null}
-
-            
-
-
-            </div>
-          </div>
-        ))}
+          {/* Display additional context for AI messages if not in a typing animation */}
+          {!message.isUser && !typingAnimation && (
+            <MessageContext 
+              msgContext={message.context}
+            />
+          )}
+        </div>
+        {/* AI avatar if the message is from the AI */}
+        {!message.isUser ? <img alt="" src={Robot} className={styles.AiAvatar} /> : null}
       </div>
+    </div>
+  ))}
+</div>
+
 
       {/* Input field and send button */}
       <div className={styles.chatInputholder}>
