@@ -4,12 +4,16 @@ import styles from "./chatbox.module.css"; // Import styles correctly
 import Welcome from "./Welcome/welcome";
 import TypingAnimation from "./typingAnim/TypingAnimation";
 
+import SendIcon from "@mui/icons-material/Send";
+
+
+
 const Chatbox = () => {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
   const autoScrolled = useRef(null);
   const [typingAnimation, setTypingAnimation] = useState(false);
-  const [completedTyping, setCompletedTyping] = useState(false);
+  
   const [displayResponse, setDisplayResponse] = useState("");
 
   const handleSend = async (e) => {
@@ -86,35 +90,43 @@ const Chatbox = () => {
         {messages.map((message, index) => (
           
           <div  key={index} className={message.isUser ? styles.chatLogUser : styles.chatLogAi} >
-            
-          
-            <div className={message.isUser ? styles.chatMessageUser : styles.chatMessageAi}>
+           <div className={message.isUser ? styles.chatMessageUser : styles.chatMessageAi}>
              <div className={message.isUser ? styles.avatarUser : styles.avatarAi} ></div>
+
+
                <div className={ message.isUser ? styles.messageUser : styles.messageAi}>
 
                  {index === messages.length - 1 ? (message.isUser ? message.text : displayResponse ) : ( // Check if it's the last message
                  message.text )} 
                </div>  
+               
             </div>
           </div>
         ))}
       </div>
 
       <div className={styles.chatInputholder}>
+        <div className={styles.AnimationContainer}>
         {typingAnimation ? <TypingAnimation /> : null}
+        </div>
+       
+
+        <div className={styles.InputContainer}>
+
         <input
           placeholder="Ask me anything ..."
           className={styles.chatInputTextarea} // Use the correct CSS class
           value={input}
-          onChange={(e) => setInput(e.target.value)}
-        ></input>
-        <button
-          onClick={handleSend}
-          className={input !== "" ? styles.sendBtn : null}
-          disabled={input === ""}
-        >
-          Send
+          onChange={(e) => setInput(e.target.value)}>
+        </input>
+
+
+        <button onClick={handleSend} className={input !== "" ? styles.sendBtn : null} disabled={input === ""}>
+          <SendIcon />
         </button>
+          
+        </div>
+        
       </div>
     </section>
   );
