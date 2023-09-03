@@ -122,7 +122,7 @@ const Chatbox = () => {
 
 
         <button onClick={handleSend} className={input !== "" ? styles.sendBtn : null} disabled={input === ""}>
-          <SendIcon />
+          <SendIcon sx={{ outline: 'none' }}/>
         </button>
           
         </div>
