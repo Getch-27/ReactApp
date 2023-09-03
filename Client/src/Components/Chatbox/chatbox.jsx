@@ -5,6 +5,11 @@ import TypingAnimation from "./typingAnim/TypingAnimation";
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import MessageContext from "./MessageContext/contetxt";
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> f7a526d90be457be854e1c62d952bcd3767a4ca0
 const Chatbox = () => {
   // State variables
   const [input, setInput] = useState(""); // Input message from the user
