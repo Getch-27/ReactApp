@@ -10,7 +10,10 @@
     font-family: 'Poppins';
 }
 .chatWrapper{
-    padding: 15px;
+    padding-left: 20px;
+    /* border: 1px solid black; */
+    width: 85%;
+    margin: auto;
     
 }
 .chatWrapper > div:first-child{
@@ -45,7 +48,7 @@
     /* border: 1px solid black; */
     width: 70%;
     margin-right: 0;
-    margin-left: 10%;
+    margin-left: 20%;
     
    
     
@@ -75,7 +78,7 @@
     background-color: #83dbec ;
     color: black;
     margin-left: 5px;
-    text-align: right;
+    text-align: left;
     border-top-left-radius: 13px;
     border-top-right-radius: 13px;
     border-bottom-right-radius: 13px;
@@ -87,7 +90,7 @@
     padding: 8px;
     margin-left: 10px;
     text-align: left;
-    background-color: #ffff;
+    background-color: rgb(245, 244, 244);
     border-top-left-radius: 13px;
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
@@ -108,7 +111,7 @@
 
 }
 .InputContainer{
-    background-color: #eeeeee;
+    background-color: #ffff;
     width: 80%;
     height: 60px;
     
@@ -122,7 +125,7 @@
 }
 
 .chatInputTextarea{
-background-color: #eeeeee;
+background-color: #ffff;
 width: 90%;
 border: none;
 outline: none;
@@ -134,7 +137,7 @@ text-indent: 10px;
 }
 
 .sendBtn{
-    background-color: #eeeeee;
+    background-color: #ffff;
     border-radius: 15px;
     outline: none;
     color: #020917;
