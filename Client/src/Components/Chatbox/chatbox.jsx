@@ -1,10 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
-import styles from "./chatbox.module.css"; // Import styles correctly
+import styles from "./chatbox.module.css"; 
 
 import Welcome from "./Welcome/welcome";
 import TypingAnimation from "./typingAnim/TypingAnimation";
 
-import SendIcon from "@mui/icons-material/Send";
+import SendRoundedIcon from '@mui/icons-material/SendRounded';
+
+import ContextButton from "./ContextButton/ContextButton";
+import MessageContext from "./MessageContext/MessageContext";
+// import MessageContext from "./MessageContext/MessageContext";
 
 
 
@@ -13,6 +17,7 @@ const Chatbox = () => {
   const [messages, setMessages] = useState([]);
   const autoScrolled = useRef(null);
   const [typingAnimation, setTypingAnimation] = useState(false);
+  const [SlideContext ,setSlideContext] =useState(false);
   
   const [displayResponse, setDisplayResponse] = useState("");
 
@@ -38,18 +43,18 @@ const Chatbox = () => {
       }
 
       const data = await response.json();
-      
       setTypingAnimation(true)
 
       let i = 0;
-      const chatHistory =data.answer;
-
+      const responseMessage =data.answer.resMessage;
+      const responseContext =data.answer.context;
+       console.log(responseContext)
       const intervalId = setInterval(() => {
-        setDisplayResponse(chatHistory.slice(0, i));
+        setDisplayResponse(responseMessage.slice(0, i));
 
         i++;
 
-        if (i > chatHistory.length) {
+        if (i > responseMessage.length) {
           clearInterval(intervalId);
           setTypingAnimation(false)
          
@@ -59,12 +64,11 @@ const Chatbox = () => {
       
       setMessages([
         ...messages,
-        { text: input, isUser: true },
-        { text: data.answer, isUser: false },
+        { text: input, isUser: true , context :"" , showContext : false},
+        { text: responseMessage, isUser: false , context:responseContext , showContext : false},
       ]);
 
       setInput("");
-      console.log(data.answer);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -74,6 +78,17 @@ const Chatbox = () => {
     // Scroll to the bottom of the container when component updates
     autoScrolled.current.scrollTop = autoScrolled.current.scrollHeight;
   }, [messages]); // Add dependency array to useEffect
+
+
+
+
+  function slideContext(id){
+
+    SlideContext ? setSlideContext(false) :setSlideContext(true);
+    
+    
+    
+  }
 
   return (
     <section className={styles.chatbox} ref={autoScrolled}>
@@ -90,20 +105,43 @@ const Chatbox = () => {
         {messages.map((message, index) => (
           
           <div  key={index} className={message.isUser ? styles.chatLogUser : styles.chatLogAi} >
-           <div className={message.isUser ? styles.chatMessageUser : styles.chatMessageAi}>
+           
+           
+           <div className={message.isUser ? styles.chatMessageUser : styles.chatMessageAi}  >
+
+
              <div className={message.isUser ? styles.avatarUser : styles.avatarAi} ></div>
 
 
-               <div className={ message.isUser ? styles.messageUser : styles.messageAi}>
+               <div className={ message.isUser ? styles.messageUser : styles.messageAi} >
 
                  {index === messages.length - 1 ? (message.isUser ? message.text : displayResponse ) : ( // Check if it's the last message
-                 message.text )} 
+                 message.text )}
+
+                 {message.isUser ? null : (typingAnimation ? null:
+                  <ContextButton 
+                    onSlide = {slideContext}
+                    key = {index}
+                    id =  {index}
+
+                  /> 
+                   )}
+
+
+                  
+                 {SlideContext ? <MessageContext 
+                    OnMessageContext = {message.context}
+                 /> :null}
+                 
+                 
                </div>  
                
             </div>
           </div>
         ))}
       </div>
+
+     
 
       <div className={styles.chatInputholder}>
         <div className={styles.AnimationContainer}>
@@ -121,9 +159,9 @@ const Chatbox = () => {
         </input>
 
 
-        <button onClick={handleSend} className={input !== "" ? styles.sendBtn : null} disabled={input === ""}>
-          <SendIcon />
-        </button>
+       
+          <SendRoundedIcon fontSize="large"  onClick={handleSend} className={input !== "" ? styles.sendBtn : null} disabled={input === ""} />
+
           
         </div>
         

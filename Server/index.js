@@ -19,7 +19,10 @@ app.post('/ask', (req, res) => {
 
   console.log(question);
   // Generate a response with the answer
-  const answer = "Your question is: -- " + question + " -- " + " Enderase stands as your primary destination within Telegram for all inquiries pertaining to Ethiopian legal affairs.";
+  const answer = {
+     resMessage : "Your question is: -- " + question + " -- " + " Enderase stands as your primary destination within Telegram for all inquiries pertaining to Ethiopian legal affairs.",
+     context : "your content is : ---" + question + " ---" 
+    }
 
   // Send the answer as a response
   res.status(200).json({ answer });
