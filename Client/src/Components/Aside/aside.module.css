@@ -4,7 +4,7 @@
     border: 1px solid white;
     height: 100vh;
     float: left;
-    background-color: #eeeeee;
+    background-color: #ffff;
 }
 .asideDiv{
     border-bottom: 1px solid lightgray ;
@@ -44,7 +44,7 @@
     padding-top: 5px;
 }
 .chatIcon{
-   color: #8a8afa;
+   color: #27b0cb  ;
    margin-top: 3px;
    
 }
