@@ -2,10 +2,13 @@
 .welcome{
     overflow: auto;
     height: 70vh;
+    background-color: #020917;
 }
 .bigTitle{
     font-size: 40px;
     font-family: 'Poppins';
+    color:#ffff;
+    
 }
 .promptContainer{
     display: flex;
@@ -14,18 +17,20 @@
 
 .prompt{
     margin: 10px;
+
 }
 
 .promptTitle{ 
     font-size: 15px;
     font-weight: bold;
     font-family: 'Poppins';
+    color:#29eea4;
     
 
 }
 
 .promptContent{
-    border: 1px solid lightgray;
+    border: 2px solid #29eea4;
     border-radius: 10px;
     height: 100px;
     width: 250px;
@@ -34,6 +39,7 @@
     font-size: 15px;
     margin: 20px;
     font-family: 'Poppins';
+    background-color: #ffff;
     
 }
 .starterQuestion{
@@ -43,4 +49,6 @@
 .slogan{
     font-weight: bold;
     font-family: 'Poppins';
+    color:#fff;
+    
 }

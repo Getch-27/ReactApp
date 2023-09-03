@@ -1,7 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
 .aside{
     width: 240px;
     border: 1px solid white;
     height: 100vh;
     float: left;
-    background-color: #eeeeee;
+    background-color: #ffff;
+    position: relative;
+}
+.asideDiv{
+    border-bottom: 1px solid lightgray ;
+ 
+}
+.asideTime{
+    font-weight: 400;
+    font-family: 'Poppins';
+    text-align: left;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+.asideChat{
+    font-family: 'Poppins';
+    text-align: left;
+    padding-left: 20px;
+    font-size: 13px;
+    font-weight: 300;
+    padding: auto;
+    display: flex;
+    background-color: rgb(245, 244, 244);
+    padding: 5px;
+    width: 90%;
+    margin: 13px auto;
+    
+    
+
+}
+.asideChat:hover{
+    background-color: #dad7d7;
+    cursor: pointer;
+}
+.asideMessage{
+    margin-left: 5px;
+    padding-top: 5px;
+}
+.chatIcon{
+   color: #27b0cb  ;
+   margin-top: 3px;
+   
+}
+.asideFooter{
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+    color: gray;
 }

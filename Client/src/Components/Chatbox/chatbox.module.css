@@ -1,22 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
 .chatbox{
-    height: 80%;
+    height: 76%;
     flex: 1;
     float: left;
-    background-color: #fff;
+    background-color: #020917;
     position: relative;
     overflow: auto;
     padding-top: 5%;
-    
+    font-family: 'Poppins';
 }
 .chatWrapper{
-    padding: 15px;
+    padding-left: 20px;
+    /* border: 1px solid black; */
+    width: 85%;
+    margin: auto;
     
+}
+.chatWrapper > div:first-child{
+    border-top: 1px solid gray;
 }
 .chatLogUser{
     padding: 10px;
     display: flex;
     position: relative;
     margin: 5px;
+   
     
 
 }
@@ -31,14 +39,17 @@
     padding: 12px;
     display: flex;
     padding-right: 20%;
+    /*border: 1px solid black;*/
 
 }
 .chatMessageAi{
     padding: 12px;
     display: flex;
-   
+    /* border: 1px solid black; */
     width: 70%;
     margin-right: 0;
+    margin-left: 20%;
+    
    
     
 }
@@ -64,10 +75,10 @@
 
 .messageUser{
     padding: 10px;
-    background-color: #3b3abe;
-    color: white;
+    background-color: #83dbec ;
+    color: black;
     margin-left: 5px;
-    text-align: right;
+    text-align: left;
     border-top-left-radius: 13px;
     border-top-right-radius: 13px;
     border-bottom-right-radius: 13px;
@@ -79,7 +90,7 @@
     padding: 8px;
     margin-left: 10px;
     text-align: left;
-    background-color: #eeeeee;
+    background-color: rgb(245, 244, 244);
     border-top-left-radius: 13px;
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
@@ -100,28 +111,31 @@
 
 }
 .InputContainer{
-    background-color: white;
+    background-color: #ffff;
     width: 80%;
     height: 60px;
-    border:#3b3abe solid 2px;
+    
     display: flex;
     justify-content:space-around;
     overflow: hidden;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 0 8px 4px 0 rgba(190, 189, 189, 0.5);
+    border: 1px solid #83dbec;
+    
 }
 
 .chatInputTextarea{
-background-color: white;
+background-color: #ffff;
 width: 90%;
 border: none;
 outline: none;
 height: 25px;
-font-size: 15px;
+font-size: 17px;
+text-indent: 10px;
 
 
 }
+
 .sendBtn{
     border: 1px solid #3a3abe94;
     background-color: #3a3abe94;
@@ -129,5 +143,12 @@ font-size: 15px;
     padding: 4px 8px;
     color: #fff;
     font-weight: 600;
+    
 }
 
+
+.contextButton{
+     display: block;
+     margin: 40px;
+   
+}

@@ -6,9 +6,10 @@ import TypingAnimation from "./typingAnim/TypingAnimation";
 
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 
-import ContextButton from "./ContextButton/ContextButton";
-import MessageContext from "./MessageContext/MessageContext";
 // import MessageContext from "./MessageContext/MessageContext";
+
+import ReadMoreIcon from '@mui/icons-material/ReadMore';
+
 
 
 
@@ -17,9 +18,18 @@ const Chatbox = () => {
   const [messages, setMessages] = useState([]);
   const autoScrolled = useRef(null);
   const [typingAnimation, setTypingAnimation] = useState(false);
-  const [SlideContext ,setSlideContext] =useState(false);
+ 
   
   const [displayResponse, setDisplayResponse] = useState("");
+
+  const[displayContext , setDisplayContext] = useState(false);
+  
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      handleSend();
+    }
+  };
 
   const handleSend = async (e) => {
     if (e) {
@@ -29,7 +39,7 @@ const Chatbox = () => {
     console.log("Input: ", input);
 
     try {
-      const response = await fetch("http://localhost:3000/ask", {
+      const response = await fetch("https://enderaseai.onrender.com/ask", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,7 +58,8 @@ const Chatbox = () => {
       let i = 0;
       const responseMessage =data.answer.resMessage;
       const responseContext =data.answer.context;
-       console.log(responseContext)
+      console.log(responseContext);
+       console.log(responseMessage)
       const intervalId = setInterval(() => {
         setDisplayResponse(responseMessage.slice(0, i));
 
@@ -79,16 +90,12 @@ const Chatbox = () => {
     autoScrolled.current.scrollTop = autoScrolled.current.scrollHeight;
   }, [messages]); // Add dependency array to useEffect
 
+function handleButton(id){
 
+  console.log("hunadle")
+}
 
-
-  function slideContext(id){
-
-    SlideContext ? setSlideContext(false) :setSlideContext(true);
-    
-    
-    
-  }
+  
 
   return (
     <section className={styles.chatbox} ref={autoScrolled}>
@@ -118,23 +125,10 @@ const Chatbox = () => {
                  {index === messages.length - 1 ? (message.isUser ? message.text : displayResponse ) : ( // Check if it's the last message
                  message.text )}
 
-                 {message.isUser ? null : (typingAnimation ? null:
-                  <ContextButton 
-                    onSlide = {slideContext}
-                    key = {index}
-                    id =  {index}
 
-                  /> 
-                   )}
-
-
-                  
-                 {SlideContext ? <MessageContext 
-                    OnMessageContext = {message.context}
-                 /> :null}
-                 
-                 
-               </div>  
+                 {typingAnimation ? null :(!message.isUser && <ReadMoreIcon  onClick = {handleButton}/>)}
+              
+                </div>  
                
             </div>
           </div>
@@ -155,7 +149,8 @@ const Chatbox = () => {
           placeholder="Ask me anything ..."
           className={styles.chatInputTextarea} // Use the correct CSS class
           value={input}
-          onChange={(e) => setInput(e.target.value)}>
+          onChange={(e) => setInput(e.target.value)}
+          onKeyPress={handleKeyPress}>
         </input>
 
 
