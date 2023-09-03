@@ -13,12 +13,13 @@ const Aside = () => {
                 <div className={styles.asideChat}><ChatIcon className={styles.chatIcon}/><div className={styles.asideMessage}> What is the process of ..</div></div>
             </div>
             <div className={styles.asideDiv}>
-                <div className={styles.asideTime}>This week</div>
+                <div className={styles.asideTime}>Earlier this week</div>
                 <div className={styles.asideChat}><ChatIcon className={styles.chatIcon}/><div className={styles.asideMessage}> What is the process of ..</div></div>
                 <div className={styles.asideChat}><ChatIcon className={styles.chatIcon}/><div className={styles.asideMessage}> What is the process of ..</div></div>
                 <div className={styles.asideChat}><ChatIcon className={styles.chatIcon}/><div className={styles.asideMessage}> What is the process of ..</div></div>
                 <div className={styles.asideChat}><ChatIcon className={styles.chatIcon}/><div className={styles.asideMessage}> What is the process of ..</div></div>
             </div>
+            <div className={styles.asideFooter}>Developed by AfroGPT 2023.</div>
         </aside>
     )
 }
