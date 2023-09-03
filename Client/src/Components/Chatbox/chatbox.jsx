@@ -6,9 +6,10 @@ import TypingAnimation from "./typingAnim/TypingAnimation";
 
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 
-// import MessageContext from "./MessageContext/MessageContext";
+import MessageContext from "./MessageContext/contetxt";
 
-import ReadMoreIcon from '@mui/icons-material/ReadMore';
+
+
 
 
 
@@ -44,7 +45,7 @@ const Chatbox = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ question: input }),
+        body: JSON.stringify({ query: input }),
       });
 
 
@@ -53,11 +54,12 @@ const Chatbox = () => {
       }
 
       const data = await response.json();
+      console.log(data)
       setTypingAnimation(true)
 
       let i = 0;
-      const responseMessage =data.answer.resMessage;
-      const responseContext =data.answer.context;
+      const responseMessage =data.Response;
+      const responseContext =data.Context;
       console.log(responseContext);
        console.log(responseMessage)
       const intervalId = setInterval(() => {
@@ -109,30 +111,21 @@ function handleButton(id){
    
 
       <div className={styles.chatWrapper}>
-        {messages.map((message, index) => (
-          
-          <div  key={index} className={message.isUser ? styles.chatLogUser : styles.chatLogAi} >
-           
-           
-           <div className={message.isUser ? styles.chatMessageUser : styles.chatMessageAi}  >
+      {messages.map((message, index) => (
+    <div key={index} className={message.isUser ? styles.chatLogUser : styles.chatLogAi}>
+    <div className={message.isUser ? styles.chatMessageUser : styles.chatMessageAi}>
+      <div className={message.isUser ? styles.avatarUser : styles.avatarAi}></div>
+      <div className={message.isUser ? styles.messageUser : styles.messageAi}>
+        {index === messages.length - 1 ? (
+          message.isUser ? (message.text) : (displayResponse )) : ( message.text)}
+        {!message.isUser && !typingAnimation && (
+          <MessageContext context={message.text} />
+        )}
+      </div>
+    </div>
+  </div>
+))}
 
-
-             <div className={message.isUser ? styles.avatarUser : styles.avatarAi} ></div>
-
-
-               <div className={ message.isUser ? styles.messageUser : styles.messageAi} >
-
-                 {index === messages.length - 1 ? (message.isUser ? message.text : displayResponse ) : ( // Check if it's the last message
-                 message.text )}
-
-
-                 {typingAnimation ? null :(!message.isUser && <ReadMoreIcon  onClick = {handleButton}/>)}
-              
-                </div>  
-               
-            </div>
-          </div>
-        ))}
       </div>
 
      
