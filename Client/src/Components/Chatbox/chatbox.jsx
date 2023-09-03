@@ -38,7 +38,7 @@ const Chatbox = () => {
     }
 
     console.log("Input: ", input);
-
+    setTypingAnimation(true)
     try {
       const response = await fetch("https://enderaseai.onrender.com/ask", {
         method: "POST",
@@ -46,16 +46,17 @@ const Chatbox = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ query: input }),
+        
       });
 
-
+         
       if (!response.ok) {
         throw new Error("Network response was not okay");
       }
 
       const data = await response.json();
       console.log(data)
-      setTypingAnimation(true)
+      
 
       let i = 0;
       const responseMessage =data.Response;
@@ -73,7 +74,7 @@ const Chatbox = () => {
          
           
         }
-      }, 20);
+      }, 5);
       
       setMessages([
         ...messages,
@@ -119,7 +120,7 @@ function handleButton(id){
         {index === messages.length - 1 ? (
           message.isUser ? (message.text) : (displayResponse )) : ( message.text)}
         {!message.isUser && !typingAnimation && (
-          <MessageContext context={message.text} />
+          <MessageContext context={message.context} />
         )}
       </div>
     </div>
