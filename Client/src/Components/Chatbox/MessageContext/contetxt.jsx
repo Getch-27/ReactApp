@@ -1,26 +1,29 @@
 import React, { useState } from "react";
 import ReadMoreIcon from '@mui/icons-material/ReadMore';
-import "./Context.css"
+import ReactMarkdown from "react-markdown";
 
+import "./Context.css";
 
-function MessageContext(props){
+function MessageContext(props) {
+  const [displayContext, setDisplayContext] = useState(false);
 
-    const[displayContext , setDisplayContext] =useState("none")
-  function HandleClick(){
-    displayContext === "none" ? setDisplayContext("block") : setDisplayContext("none")
+  function handleClick() {
+    setDisplayContext(!displayContext);
   }
+
   return (
     <div>
-      <div className="ContectButton">
-         <h3>Show Context</h3>
-         <ReadMoreIcon fontSize="large" onClick={HandleClick} />
+      <div className="ContectButton" onClick={handleClick}>
+        <h3>Show Context</h3>
+        <ReadMoreIcon fontSize="large" />
       </div>
-      <p style={{ display: displayContext  }}>
-        {props.msgContext}
-      </p>
+      {displayContext && (
+        <div>
+          <ReactMarkdown children={props.msgContext}></ReactMarkdown>
+        </div>
+      )}
     </div>
   );
 }
 
-
-export default  MessageContext;
+export default MessageContext;

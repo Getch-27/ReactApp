@@ -24,7 +24,7 @@
     display: flex;
     position: relative;
     margin: 5px;
-   
+   flex-direction: column;
     
 
 }
@@ -33,6 +33,7 @@
     display: flex;
     position: relative;
     margin: 5px;
+    flex-direction: column;
 
 }
 .chatMessageUser{
@@ -40,12 +41,14 @@
     display: flex;
     padding-right: 20%;
     /*border: 1px solid black;*/
+    order: 2;
+    background-color: #020917;
 
 }
 .chatMessageAi{
     padding: 12px;
     display: flex;
-    /* border: 1px solid black; */
+  
     width: 70%;
     margin-right: 0;
     margin-left: 20%;
@@ -53,22 +56,21 @@
    
     
 }
-.avatarUser{
-    background-color: #eeeeee;
-    background-image: url("/../Client/public/vite.svg");
+.UserAvatar{
+   
+    background-image: url("/src/images/User.png");
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     margin-top: 10px;
 
 }
 
-.avatar{
-    background-color: #eeeeee;
-    background-image: url("/../Client/public/vite.svg");
-    border-radius: 50%;
-    width: 25px;
-    height: 25px;
+.AiAvatar{
+    background-image: url("/src/images/robot-assistant.png");
+    border-radius: 5%;
+    width: 45px;
+    height: 45px;
     margin-top: 10px;
 
 }
@@ -89,13 +91,13 @@
 }
 .messageAi{
     padding: 8px;
-    margin-left: 10px;
+    margin-right: 10px;
     text-align: left;
     background-color: rgb(245, 244, 244);
     border-top-left-radius: 13px;
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
-    min-width: 600px;
+    min-width: 90%;
     
 
 }
@@ -149,8 +151,4 @@ text-indent: 10px;
 }
 
 
-.contextButton{
-     display: block;
-     margin: 40px;
-   
-}
+

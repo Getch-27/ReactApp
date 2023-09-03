@@ -5,11 +5,11 @@ import TypingAnimation from "./typingAnim/TypingAnimation";
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import MessageContext from "./MessageContext/contetxt";
 
-<<<<<<< HEAD
+import User from "./../../images/User.png";
+import Robot from "./../../images/Robot.png";
 
 
-=======
->>>>>>> f7a526d90be457be854e1c62d952bcd3767a4ca0
+
 const Chatbox = () => {
   // State variables
   const [input, setInput] = useState(""); // Input message from the user
@@ -70,7 +70,7 @@ const Chatbox = () => {
           clearInterval(intervalId);
           setTypingAnimation(false);
         }
-      }, 5);
+      }, 10);
 
       // Update the chat messages with user's input and AI's response
       setMessages([
@@ -107,7 +107,15 @@ const Chatbox = () => {
         {messages.map((message, index) => (
           <div key={index} className={message.isUser ? styles.chatLogUser : styles.chatLogAi}>
             <div className={message.isUser ? styles.chatMessageUser : styles.chatMessageAi}>
-              <div className={message.isUser ? styles.avatarUser : styles.avatarAi}></div>
+             
+     
+
+
+
+
+              
+              {message.isUser ? <img alt="" src={User} className={styles.UserAvatar} /> : null}
+
               <div className={message.isUser ? styles.messageUser : styles.messageAi}>
                 {index === messages.length - 1 ? (message.isUser ? (message.text) : (displayResponse)) : (message.text)}
 
@@ -121,6 +129,11 @@ const Chatbox = () => {
                 
                 )}
               </div>
+              {!message.isUser ? <img alt="" src={Robot} className={styles.AiAvatar} /> : null}
+
+            
+
+
             </div>
           </div>
         ))}
