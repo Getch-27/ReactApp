@@ -16,6 +16,13 @@ const Chatbox = () => {
   
   const [displayResponse, setDisplayResponse] = useState("");
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      handleSend();
+    }
+  };
+
   const handleSend = async (e) => {
     if (e) {
       e.preventDefault();
@@ -117,7 +124,8 @@ const Chatbox = () => {
           placeholder="Ask me anything ..."
           className={styles.chatInputTextarea} // Use the correct CSS class
           value={input}
-          onChange={(e) => setInput(e.target.value)}>
+          onChange={(e) => setInput(e.target.value)}
+          onKeyPress={handleKeyPress}>
         </input>
 
 
