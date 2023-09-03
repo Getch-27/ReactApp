@@ -1,26 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
 .chatbox{
     height: 76%;
     flex: 1;
     float: left;
-    background-color: #fff;
+    background-color: #020917;
     position: relative;
     overflow: auto;
     padding-top: 5%;
-    
-    
-    
+    font-family: 'Poppins';
 }
 .chatWrapper{
     padding: 15px;
     
-    
-    
+}
+.chatWrapper > div:first-child{
+    border-top: 1px solid gray;
 }
 .chatLogUser{
     padding: 10px;
     display: flex;
     position: relative;
     margin: 5px;
+   
     
 
 }
@@ -45,6 +46,7 @@
     width: 70%;
     margin-right: 0;
     margin-left: 10%;
+    
    
     
 }
@@ -70,8 +72,8 @@
 
 .messageUser{
     padding: 10px;
-    background-color: #3b3abe;
-    color: white;
+    background-color: #83dbec ;
+    color: black;
     margin-left: 5px;
     text-align: right;
     border-top-left-radius: 13px;
@@ -79,12 +81,13 @@
     border-bottom-right-radius: 13px;
     
     
+    
 }
 .messageAi{
     padding: 8px;
     margin-left: 10px;
     text-align: left;
-    background-color: #eeeeee;
+    background-color: #ffff;
     border-top-left-radius: 13px;
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
@@ -105,35 +108,37 @@
 
 }
 .InputContainer{
-    background-color: white;
+    background-color: #eeeeee;
     width: 80%;
     height: 60px;
-    border:#3b3abe solid 2px;
+    
     display: flex;
     justify-content:space-around;
     overflow: hidden;
     align-items: center;
     border-radius: 20px;
-    box-shadow: 0 8px 4px 0 rgba(190, 189, 189, 0.5);
+    border: 1px solid #83dbec;
+    
 }
 
 .chatInputTextarea{
-background-color: white;
+background-color: #eeeeee;
 width: 90%;
 border: none;
 outline: none;
 height: 25px;
-font-size: 15px;
+font-size: 17px;
+text-indent: 10px;
 
 
 }
+
 .sendBtn{
-    border: 1px solid #3a3abe94;
-    background-color: #3a3abe94;
+    background-color: #eeeeee;
     border-radius: 15px;
     outline: none;
-   
-    color: #fff;
+    color: #020917;
     font-weight: 600;
+    
 }
 
