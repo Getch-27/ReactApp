@@ -1,15 +1,20 @@
-import styles from './welcome.module.css';
+//welcome page component
+import styles from './welcome.module.css'; //importing the styles
 
+
+//props received from the parent component
 const Welcome = (props) => {
+  // Destructuring props to extract setInput and handleSend functions
     const setInput = props.setInput;
     const handleSend = props.handleSend;
     
-
+   // Function to handle sending a message
     const handleSendMessage = async (message) => {
-        
+        // Set the input with the provided message
       setInput(message);
       console.log('The input is set as the starter question');
       try {
+        // Await the handleSend function to send the message
         await handleSend(); 
         console.log('Message sent successfully');
         
@@ -23,6 +28,7 @@ const Welcome = (props) => {
             <h1 className={styles.bigTitle}>EnderaseAI</h1>
             <div className={styles.promptContainer}>
 
+               {/* Prompt 1 */}
             <div className={styles.prompt}>
                     <p className={styles.promptTitle}>🖐️ Ask Anything Legal</p>
                     <div className={styles.promptContent}>
@@ -31,6 +37,7 @@ const Welcome = (props) => {
                        </a></div>
                 </div>
           
+                {/* Prompt 2 */}
                 <div className={styles.prompt}>
                     <p className={styles.promptTitle}>💡 Instant Legal Answers</p>
                     <div className={styles.promptContent}>
@@ -38,6 +45,8 @@ const Welcome = (props) => {
                         What licenses or registrations are required to operate my small business, and how can I obtain them?  
                        </a></div>
                 </div>
+
+                 {/* Prompt 3 */}
 
                 <div className={styles.prompt}>
                     <p className={styles.promptTitle}>📒 Your Legal Advisor</p>
