@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import ReadMoreIcon from '@mui/icons-material/ReadMore';
 
 
 function MessageContext(props){
 
-    return(
-         <div>
-           <ReadMoreIcon />
-          <p>{props.contaxt}</p>
-
-         </div>
-       
-    )
+    const[displayContext , setDisplayContext] =useState("none")
+  function HandleClick(){
+    displayContext === "none" ? setDisplayContext("block") : setDisplayContext("none")
+  }
+  return (
+    <div>
+      <ReadMoreIcon onClick={HandleClick} />
+      <p style={{ display: displayContext  }}>
+        {props.msgContext}
+      </p>
+    </div>
+  );
 }
 
 

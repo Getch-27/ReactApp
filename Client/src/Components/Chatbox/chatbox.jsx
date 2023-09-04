@@ -1,26 +1,25 @@
 import React, { useState, useEffect, useRef } from "react";
-import styles from "./chatbox.module.css"; 
-
+import styles from "./chatbox.module.css";
 import Welcome from "./Welcome/welcome";
 import TypingAnimation from "./typingAnim/TypingAnimation";
-
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
-
 import MessageContext from "./MessageContext/contetxt";
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f7a526d90be457be854e1c62d952bcd3767a4ca0
 const Chatbox = () => {
-  const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([]);
-  const autoScrolled = useRef(null);
-  const [typingAnimation, setTypingAnimation] = useState(false);
- 
-  
-  const [displayResponse, setDisplayResponse] = useState("");
+  // State variables
+  const [input, setInput] = useState(""); // Input message from the user
+  const [messages, setMessages] = useState([]); // Array to store chat messages
+  const autoScrolled = useRef(null); // Ref for scrolling to the bottom
+  const [typingAnimation, setTypingAnimation] = useState(false); // State for typing animation
+  const [displayResponse, setDisplayResponse] = useState(""); // Displayed AI response
+  const [displayContext, setDisplayContext] = useState(false); // State for displaying context
 
-  const[displayContext , setDisplayContext] = useState(false);
-  
+  // Handle Enter key press in the input field
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
@@ -28,14 +27,20 @@ const Chatbox = () => {
     }
   };
 
+  // Function to send a message to the AI server
   const handleSend = async (e) => {
     if (e) {
       e.preventDefault();
     }
 
+    // Log user's input
     console.log("Input: ", input);
 
+    // Display typing animation
+    setTypingAnimation(true);
+
     try {
+      // Send a POST request to the AI server
       const response = await fetch("https://enderaseai.onrender.com/ask", {
         method: "POST",
         headers: {
@@ -44,59 +49,52 @@ const Chatbox = () => {
         body: JSON.stringify({ query: input }),
       });
 
-
       if (!response.ok) {
         throw new Error("Network response was not okay");
       }
 
+      // Parse the AI's response
       const data = await response.json();
-      console.log(data)
-      setTypingAnimation(true)
+      console.log(data);
 
       let i = 0;
-      const responseMessage =data.Response;
-      const responseContext =data.Context;
-      console.log(responseContext);
-       console.log(responseMessage)
+      const responseMessage = data.Response;
+      const responseContext = data.Context;
+
+      // Animate the AI's response message
       const intervalId = setInterval(() => {
         setDisplayResponse(responseMessage.slice(0, i));
-
         i++;
 
         if (i > responseMessage.length) {
           clearInterval(intervalId);
-          setTypingAnimation(false)
-         
-          
+          setTypingAnimation(false);
         }
-      }, 20);
-      
+      }, 5);
+
+      // Update the chat messages with user's input and AI's response
       setMessages([
         ...messages,
-        { text: input, isUser: true , context :"" , showContext : false},
-        { text: responseMessage, isUser: false , context:responseContext , showContext : false},
+        { text: input, isUser: true, context: "", showContext: false },
+        { text: responseMessage, isUser: false, context: responseContext, showContext: false },
       ]);
 
+      // Clear the input field
       setInput("");
     } catch (error) {
       console.error("Error:", error);
     }
   };
 
+  // Automatically scroll to the bottom when messages change
   useEffect(() => {
-    // Scroll to the bottom of the container when component updates
     autoScrolled.current.scrollTop = autoScrolled.current.scrollHeight;
-  }, [messages]); // Add dependency array to useEffect
+  }, [messages]);
 
-function handleButton(id){
-
-  console.log("hunadle")
-}
-
-  
-
+  // Render the component
   return (
     <section className={styles.chatbox} ref={autoScrolled}>
+      {/* Welcome message and input */}
       <Welcome
         handleSend={handleSend}
         input={input}
@@ -104,51 +102,51 @@ function handleButton(id){
         setMessages={setMessages}
       />
 
-   
-
+      {/* Display chat messages */}
       <div className={styles.chatWrapper}>
-      {messages.map((message, index) => (
-    <div key={index} className={message.isUser ? styles.chatLogUser : styles.chatLogAi}>
-    <div className={message.isUser ? styles.chatMessageUser : styles.chatMessageAi}>
-      <div className={message.isUser ? styles.avatarUser : styles.avatarAi}></div>
-      <div className={message.isUser ? styles.messageUser : styles.messageAi}>
-        {index === messages.length - 1 ? (
-          message.isUser ? (message.text) : (displayResponse )) : ( message.text)}
-        {!message.isUser && !typingAnimation && (
-          <MessageContext context={message.text} />
-        )}
+        {messages.map((message, index) => (
+          <div key={index} className={message.isUser ? styles.chatLogUser : styles.chatLogAi}>
+            <div className={message.isUser ? styles.chatMessageUser : styles.chatMessageAi}>
+              <div className={message.isUser ? styles.avatarUser : styles.avatarAi}></div>
+              <div className={message.isUser ? styles.messageUser : styles.messageAi}>
+                {index === messages.length - 1 ? (message.isUser ? (message.text) : (displayResponse)) : (message.text)}
+
+                {!message.isUser && !typingAnimation && (
+                  
+                  <MessageContext 
+                    msgContext ={message.context}
+                  />
+                  
+                  
+                
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
-  </div>
-))}
 
-      </div>
-
-     
-
+      {/* Input field and send button */}
       <div className={styles.chatInputholder}>
         <div className={styles.AnimationContainer}>
-        {typingAnimation ? <TypingAnimation /> : null}
+          {typingAnimation ? <TypingAnimation /> : null}
         </div>
-       
 
         <div className={styles.InputContainer}>
-
-        <input
-          placeholder="Ask me anything ..."
-          className={styles.chatInputTextarea} // Use the correct CSS class
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyPress={handleKeyPress}>
-        </input>
-
-
-       
-          <SendRoundedIcon fontSize="large"  onClick={handleSend} className={input !== "" ? styles.sendBtn : null} disabled={input === ""} />
-
-          
+          <input
+            placeholder="Ask me anything ..."
+            className={styles.chatInputTextarea}
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyPress={handleKeyPress}
+          />
+          <SendRoundedIcon
+            fontSize="large"
+            onClick={handleSend}
+            className={input !== "" ? styles.sendBtn : null}
+            disabled={input === ""}
+          />
         </div>
-        
       </div>
     </section>
   );
