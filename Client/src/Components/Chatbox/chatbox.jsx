@@ -10,10 +10,6 @@ import MessageContext from "./MessageContext/contetxt";
 
 
 
-
-
-
-
 const Chatbox = () => {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);

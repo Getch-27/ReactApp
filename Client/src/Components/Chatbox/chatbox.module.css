@@ -85,6 +85,7 @@
     
     
     
+    
 }
 .messageAi{
     padding: 8px;
@@ -94,6 +95,7 @@
     border-top-left-radius: 13px;
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
+    min-width: 600px;
     
 
 }
