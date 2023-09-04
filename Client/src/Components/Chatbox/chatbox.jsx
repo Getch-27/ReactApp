@@ -31,12 +31,12 @@ const Chatbox = () => {
     console.log("Input: ", input);
 
     try {
-      const response = await fetch("http://localhost:3000/ask", {
+      const response = await fetch("https://enderaseai.onrender.com/ask", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ question: input }),
+        body: JSON.stringify({ query: input }),
       });
 
 
@@ -46,32 +46,32 @@ const Chatbox = () => {
 
       const data = await response.json();
       
-      setTypingAnimation(true)
+      // setTypingAnimation(true)
 
-      let i = 0;
-      const chatHistory =data.answer;
+      // let i = 0;
+      // const chatHistory =data.answer;
 
-      const intervalId = setInterval(() => {
-        setDisplayResponse(chatHistory.slice(0, i));
+      // const intervalId = setInterval(() => {
+      //   setDisplayResponse(chatHistory.slice(0, i));
 
-        i++;
+      //   i++;
 
-        if (i > chatHistory.length) {
-          clearInterval(intervalId);
-          setTypingAnimation(false)
+      //   if (i > chatHistory.length) {
+      //     clearInterval(intervalId);
+      //     setTypingAnimation(false)
          
           
-        }
-      }, 20);
+      //   }
+      // }, 20);
       
       setMessages([
         ...messages,
         { text: input, isUser: true },
-        { text: data.answer, isUser: false },
+        { text: data.Response, isUser: false },
       ]);
 
       setInput("");
-      console.log(data.answer);
+      console.log(data.Response);
     } catch (error) {
       console.error("Error:", error);
     }
