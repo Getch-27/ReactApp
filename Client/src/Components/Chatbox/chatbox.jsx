@@ -46,23 +46,23 @@ const Chatbox = () => {
 
       const data = await response.json();
       
-      // setTypingAnimation(true)
+      setTypingAnimation(true)
 
-      // let i = 0;
-      // const chatHistory =data.answer;
+      let i = 0;
+      const chatHistory =data.answer;
 
-      // const intervalId = setInterval(() => {
-      //   setDisplayResponse(chatHistory.slice(0, i));
+      const intervalId = setInterval(() => {
+        setDisplayResponse(chatHistory.slice(0, i));
 
-      //   i++;
+        i++;
 
-      //   if (i > chatHistory.length) {
-      //     clearInterval(intervalId);
-      //     setTypingAnimation(false)
+        if (i > chatHistory.length) {
+          clearInterval(intervalId);
+          setTypingAnimation(false)
          
           
-      //   }
-      // }, 20);
+        }
+      }, 20);
       
       setMessages([
         ...messages,
