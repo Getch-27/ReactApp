@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 // POST endpoint to handle questions
 app.post('/ask', (req, res) => {
   // Check if the request body contains the "question" field
-  const question = req.body.question;
+  const question = req.body.query;
 
   if (!question) {
     return res.status(400).json({ error: 'Missing "question" field in the request body' });
