@@ -1,3 +1,6 @@
+//created for test perpose only
+
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../../Components/Button';
@@ -5,7 +8,7 @@ import Button from '../../Components/Button';
 export default function Navigate() {
   return (
     
-      <div className=" flex justify-between items-center w-67 ">
+      <div className=" flex justify-between items-center w-67 text-white">
         <div className=" bg-primary w-30 m-5 text-lg">primary</div>
         <div className="bg-secondary font-martian w-30 m-5 text-lg">secondary</div>
         <div className=" bg-midnight font-900 w-30 m-5 text-lg">midnight</div>

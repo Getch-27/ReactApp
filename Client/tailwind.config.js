@@ -7,9 +7,12 @@ export default {
   theme: {
     extend: {},
     colors: {
+
       transparent: 'transparent',
       primary: '#040d19' ,
       secondary: '#01254D',
+      'black' : '#000000',
+      'white' : '#ffffff',
       'midnight': '#40E8F2',
       'metal': '#df2672',
       'tahiti': '#fe4f32',
