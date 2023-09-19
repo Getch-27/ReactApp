@@ -7,7 +7,7 @@
 
 
 /*default styles*/
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -75,14 +75,14 @@ button:focus-visible {
   button {
     background-color: #eeeeee;
   }
-}
+} */
 
 
 /*****************************************************/
-.app{
+/* .app{
   text-align: center;
   display: flex;
   position: absolute;
   top: 0; bottom: 0; right: 0; left: 0;
   background-color: #020917;
-}
+} */
