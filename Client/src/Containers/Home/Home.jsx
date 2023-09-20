@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 
 import Button from '../../Components/Button';
 import "../../App.css";
-import { motion } from 'framer-motion';
+import { motion ,useScroll} from 'framer-motion';
 import Robot from "../../assets/images/chatRobot.png"
-
+import legalBOT2 from "../../assets/images/legalBOT2.jpg"
 import NavigationBar from '../../Components/NavBar/NavigationBar';
 
 export default function Home() {
+  const { scrollYProgress } = useScroll();
   return (
-    <section className="h-full">
+    <>
+       <section className="h-full">
       <NavigationBar />
 
       <h1 className="EnderaseHero mt-6 font-martian bg-gradient-to-b from-midnight to-midnight m-auto w-128 font-thin text-transparent bg-clip-text text-center">
@@ -45,5 +47,10 @@ export default function Home() {
         ></motion.img>
       </div>
     </section>
-  );
+   <section className='h-full descripion bg-primary'>
+  
+    
+   </section>
+    </>
+   );
 }
