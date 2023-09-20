@@ -13,7 +13,7 @@ export default {
     colors: {
 
       transparent: 'transparent',
-      primary: '#040d19' ,
+      primary: '#030F1E' ,
       secondary: '#01254D',
       'black' : '#000000',
       'white' : '#ffffff',
