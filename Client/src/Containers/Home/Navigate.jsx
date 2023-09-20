@@ -14,16 +14,18 @@ export default function Navigate() {
         <div className=" bg-metal w-30 m-5 text-lg">metal</div>
         <div className=" bg-tahiti  w-30 m-5 text-lg">tahiti</div>
         
-        <h1 className="mx-auto text-red-600 align-middle m-5">Welcome home</h1>
+        <h1 className="mx-auto text-red-600 align-middle m-5 font-martian">font martian</h1>
+        <h1 className="mx-auto text-red-600 align-middle m-5 font-inter">font inter</h1>
+        <h1 className="mx-auto text-red-600 align-middle m-5 font-roboto">font roboto</h1>
         
       </div>
       <Link to={"/LogInPage"}>
-          <Button text ="Login" />
+          <Button text ="Login" styles=" rounded-3xl border shadow-md px-10 py-2 text-white"/>
         </Link>
        
         <Link to={"/Home"}>
          
-          <Button text ="Home" />
+          <Button text ="Home" styles=" rounded-3xl border shadow-md px-10 py-2 text-white"/>
         </Link>
 </>
       
