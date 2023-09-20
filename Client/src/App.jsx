@@ -10,8 +10,8 @@ import Navigate from './Containers/Home/Navigate';
 function App() {
   
   return (
-    <>
-    <NavigationBar />
+    <div className='app'>
+    
     <Routes>
     <Route path='/' element={<Navigate />}/>
     <Route path='/Home' element={<Home/>} />
@@ -27,7 +27,7 @@ function App() {
 
     </div> */}
       
-    </>
+    </div>
   )
 }
 

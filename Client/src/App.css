@@ -1,4 +1,11 @@
 .app{
+  
   height: 100vh;
+  background: radial-gradient(ellipse at top ,#040d19f5 60% , #01254D 90%);
 }
 
+.EnderaseHero{
+  letter-spacing: 0.1em;
+  font-size: 7rem ;
+  line-height: 1;
+}

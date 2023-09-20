@@ -1,7 +1,7 @@
 import React from 'react'
 
-export default function Button({text}) {
+export default function Button({text ,styles}) {
   return (
-    <button className=" rounded shadow-md px-4 py-2 text-black">{text}</button>
+    <button className={styles}>{text}</button>
   )
 }
