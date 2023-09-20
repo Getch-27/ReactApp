@@ -1,6 +1,8 @@
 import React from 'react'
 import Logo from "../../assets/images/Logo.png";
 import Button from '../Button';
+import { MenuToggle } from './MenuToggle';
+import {motion} from "framer-motion";
 export default function NavigationBar() {
   return (
    <header className=" w-128  m-auto flex justify-between p-2 py-12 items-center">
@@ -10,7 +12,7 @@ export default function NavigationBar() {
       </div>
       <div className='Menu'>
         <Button text="Start Chat" styles=" rounded-3xl border shadow-md px-10 py-2 text-white"/>
-        <></>
+        <MenuToggle />
       </div>
    </header>
   )
