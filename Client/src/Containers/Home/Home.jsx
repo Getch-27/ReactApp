@@ -5,7 +5,7 @@ import Button from '../../Components/Button';
 import "../../App.css";
 import { motion ,useScroll} from 'framer-motion';
 import Robot from "../../assets/images/chatRobot.png"
-import legalBOT2 from "../../assets/images/legalBOT2.jpg"
+
 import NavigationBar from '../../Components/NavBar/NavigationBar';
 
 export default function Home() {
@@ -25,15 +25,15 @@ export default function Home() {
             at Your Service.
             <span className=" text-metal">24/7</span>
           </h1>
-          <motion.span whileHover={{scale :1.01}}>
+          
             <Button
               text="START CHAT"
               styles="mt-8  bg-gradient-to-r from-midnight to-metal rounded-2xl  border-metal font-bold px-6 py-3 text-white "
             />
-          </motion.span>
+          
         </div>
         <motion.img
-          initial={{ opacity: 0  , right :100}}
+          initial={{ opacity: 0  , right :100}} 
           whileInView={{ opacity: 1 , right : 0 }
           
           }
