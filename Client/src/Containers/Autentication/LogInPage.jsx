@@ -8,6 +8,7 @@ export default function LogInPage() {
   });
 
   const [signupForm, setSignupForm] = useState({
+    name: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -52,6 +53,16 @@ export default function LogInPage() {
           <div>Signup</div>
           <div>
           <form onSubmit={handleSignupSubmit}>
+          <div>
+        <input
+          type="text"
+          name="name"
+          value={signupForm.name}
+          onChange={handleSignupChange}
+          placeholder="Display Name"
+          className="m-2"
+        />
+        </div>
           <div>
           <input
           type="email"
