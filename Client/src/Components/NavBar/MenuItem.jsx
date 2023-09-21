@@ -18,18 +18,15 @@ const variants = {
   }
 };
 
-
-
-export const MenuItem = ({ i }) => {
-  
-  return (
-    <motion.li className="flex justify-center"
+export const MenuItem = ({ i ,icon ,text } ) => {
+   return (
+    <motion.li className="flex justify-start pl-3 w-full "
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <div className="icon-placeholder rounded-full mt-3 mr-1" >LOgo</div> 
-      <div className="text-placeholder  rounded mt-3"  >Menu Item</div>
+      <div className="icon-placeholder rounded-full mt-3 mr-1 cursor-pointer text-metal">{icon}</div> 
+      <div className="text-placeholder  rounded mt-3 cursor-pointer text-secondary ml-2" >{text}</div>
     </motion.li>
   );
 };
