@@ -15,21 +15,20 @@ export default function Home() {
        <section className="h-full">
       <NavigationBar />
 
-      <h1 className="EnderaseHero mt-6 font-martian bg-gradient-to-b from-midnight to-midnight m-auto w-128 font-thin text-transparent bg-clip-text text-center">
+      <h1 className="EnderaseHero mt-6 font-martian bg-gradient-to-b from-midnight to-white m-auto w-128 font-thin text-transparent bg-clip-text text-center">
         ENDERASE
       </h1>
       <div className="flex justify-between w-128 mx-auto items-cetrer p-10">
-        <div className="mt-8">
-          <h1 className="font-martian  text-4xl w-96 text-white">
+        <div className="mt-2">
+          <h1 className="font-martian  text-2xl w-96 text-white">
             Robust <span className=" text-midnight">Legal AI Assistance</span>{" "}
             at Your Service.
             <span className=" text-metal">24/7</span>
           </h1>
           <motion.span whileHover={{ scale: 0.5 }}>
-            {" "}
             <Button
               text="START CHAT"
-              styles="mt-8  bg-gradient-to-r from-midnight to-metal rounded-3xl  border-metal font-bold shadow-md px-10 py-4 text-white w-128"
+              styles="mt-8  bg-gradient-to-r from-midnight to-metal rounded-2xl  border-metal font-bold px-10 py-4 text-white w-128"
             />
           </motion.span>
         </div>
@@ -43,7 +42,7 @@ export default function Home() {
           duration : 1,
         }}
           src={Robot}
-          className=" absolute right-24"
+          className=" w-96"
         ></motion.img>
       </div>
     </section>
