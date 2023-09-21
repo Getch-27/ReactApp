@@ -104,7 +104,7 @@ export default function Home() {
       <h1 className="font-martian bg-gradient-to-r from-tahiti to-metal bg-clip-text  text-2xl w-128 m-auto text-center text-transparent mt-2 p-3">
             Our Platforms
           </h1>
-          <Platform />
+          <Platform/>
       </secton>
       <section className='h-full'>
         <h1>Contuct Us</h1>

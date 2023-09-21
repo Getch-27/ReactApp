@@ -1,23 +1,8 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
+import TelegramImage from "../../assets/images/telegram.png"
+import AndroidImage from "../../assets/images/android.jpg"
 
-const Example = () => {
-  return (
-    <div className="bg-neutral-800">
-      <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll down
-        </span>
-      </div>
-      <HorizontalScrollCarousel />
-      <div className="flex h-48 items-center justify-center">
-        <span className="font-semibold uppercase text-neutral-500">
-          Scroll up
-        </span>
-      </div>
-    </div>
-  );
-};
 
 const HorizontalScrollCarousel = () => {
   const targetRef = useRef(null);
@@ -28,7 +13,7 @@ const HorizontalScrollCarousel = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-100%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
+    <section ref={targetRef} className="relative h-[300vh] bg-midnight ">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4 ">
           {cards.map((card) => {
@@ -47,24 +32,35 @@ const Card = ({ card }) => {
         
         className="absolute inset-0 z-0  grid grid-cols-2 "
       >
-        <div className=" bg-secondary">image</div>
-        <div className=" bg-metal">description</div>
+         <img src={card.url} className=" h-64 "></img>
+        <div className=" bg-metal m-10 rounded-lg   ">
+          <h1 className="font-martian">{card.title}</h1>
+          <h3 className="font-inter">{card.heading}</h3>
+          <p className="font-inter">{card.pahragraph}</p>
+          <a className="font-inter" href={card.link}>link</a>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Example;
+export default HorizontalScrollCarousel;
 
 const cards = [
   {
-    url: "/imgs/abstract/1.jpg",
-    title: "Title 1",
+    url: TelegramImage,
+    title: "Enderase Telegram Bot",
+    heading : "Get Legal Wisdom on Telegram",
+    pahragraph : " Your 24/7 Legal Assistant in Telegram. Instant, reliable answers to your legal questions. Simplify Ethiopian law with every chat.",
+    link :"/dshsjh",
     id: 1,
   },
   {
-    url: "/imgs/abstract/2.jpg",
-    title: "Title 2",
+    url: AndroidImage,
+    title: "Enderase Android App",
+    heading : "Get Legal Wisdom on Telegram",
+    pahragraph : " . Access accurate legal insights anytime, anywhere. Your trusted guide for legal decisions.",
+    link :"/dshsjh",
     id: 2,
   },
  
