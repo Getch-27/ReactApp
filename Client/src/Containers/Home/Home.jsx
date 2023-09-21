@@ -5,7 +5,7 @@ import Button from '../../Components/Button';
 import "../../App.css";
 import { motion ,useScroll} from 'framer-motion';
 import Robot from "../../assets/images/chatRobot.png"
-import legalBOT2 from "../../assets/images/legalBOT2.jpg"
+
 import NavigationBar from '../../Components/NavBar/NavigationBar';
 
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
           
         </div>
         <motion.img
-          initial={{ opacity: 0  , right :100}}
+          initial={{ opacity: 0  , right :100}} 
           whileInView={{ opacity: 1 , right : 0 }
           
           }
