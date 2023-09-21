@@ -16,7 +16,7 @@ export default function NavigationBar() {
         <h1 className=' font-martian font-light text-xl ml-2 text-transparent  bg-gradient-to-b from-white to-balck bg-clip-text'>EnderaseAI</h1>
       </div>
       
-      <Button text="Start Chat" styles=" rounded-3xl border shadow-md px-10 py-2 text-white"/>
+      {/* <Button text="Start Chat" styles=" rounded-3xl border shadow-md px-10 py-2 text-white"/> */}
       <SideMenu />
       
       

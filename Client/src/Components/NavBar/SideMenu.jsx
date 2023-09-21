@@ -43,7 +43,7 @@ const menuList = [
   },
   { icon :<LockOpenRoundedIcon />,
     text: "LogIn/Signin",
-    link: "/login"
+    link: "/LogInPage"
   },
   { icon :<PlayArrowRoundedIcon />,
     text: "Get Started",
