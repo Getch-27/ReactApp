@@ -25,10 +25,10 @@ export default function Home() {
             at Your Service.
             <span className=" text-metal">24/7</span>
           </h1>
-          <motion.span whileHover={{ scale: 0.5 }}>
+          <motion.span whileHover={{scale :1.01}}>
             <Button
               text="START CHAT"
-              styles="mt-8  bg-gradient-to-r from-midnight to-metal rounded-2xl  border-metal font-bold px-10 py-4 text-white w-128"
+              styles="mt-8  bg-gradient-to-r from-midnight to-metal rounded-2xl  border-metal font-bold px-6 py-3 text-white "
             />
           </motion.span>
         </div>
