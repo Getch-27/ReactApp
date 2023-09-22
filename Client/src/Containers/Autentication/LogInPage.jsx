@@ -78,11 +78,11 @@ export default function LogInPage() {
   };
 
   return (
-    <div className=" text-midnight">
+    <div className=" text-white">
       {signupFormVisible ? (
         <div className="flex items-center justify-center h-screen">
-          <div className='text-center'>
-          <div>Signup</div>
+          <div className='text-center p-5'>
+          <div className='text-transparent bg-gradient-to-r from-midnight to-tahiti bg-clip-text text-3xl font-bold font-nunito mb-3'>Signup</div>
           <div>
           <form onSubmit={handleSignupSubmit}>
           <div>
@@ -92,7 +92,8 @@ export default function LogInPage() {
           value={signupForm.name}
           onChange={handleSignupChange}
           placeholder="Display Name"
-          className="m-2"
+          className="m-2 h-10 w-64 rounded-xl border-2 placeholder text-black outline-none indent-2"
+          style={{ fontSize: '16px' }}
         />
         </div>
           <div>
@@ -102,7 +103,7 @@ export default function LogInPage() {
           value={signupForm.email}
           onChange={handleSignupChange}
           placeholder="Email"
-          className="m-2"
+          className="m-2 h-10 w-64 rounded-xl border-2 placeholder text-black outline-none indent-2"
         />
         </div>
         <div>
@@ -112,7 +113,7 @@ export default function LogInPage() {
           value={signupForm.password}
           onChange={handleSignupChange}
           placeholder="Password"
-          className="m-2"
+          className="m-2 h-10 w-64 rounded-xl border-2 placeholder text-black outline-none indent-2"
         />
         </div>
         <div>
@@ -122,19 +123,19 @@ export default function LogInPage() {
           value={signupForm.confirmPassword}
           onChange={handleSignupChange}
           placeholder="Confirm Password"
-          className="m-2"
+          className="m-2 h-10 w-64 rounded-xl border-2 placeholder text-black outline-none indent-2"
         />
         </div>
         <div>
-        <p className=' text-tahiti m-2'>{error}</p>
-          <button type="submit">Signup</button>
+        <p className=' text-tahiti m-1 text-xs'>{error}</p>
+          <button type="submit" className='m-2 h-10 w-64 rounded-xl border-2 placeholder text-white outline-none'>Signup</button>
           </div>
           </form>
           </div>
           <div>
           <p>
             Already have an account?{' '}
-            <button onClick={toggleSignupForm}>Login</button>
+            <button onClick={toggleSignupForm} className='text-transparent bg-gradient-to-r from-midnight to-tahiti bg-clip-text text-lg font-bold font-nunito mb-3'> | Login</button>
           </p>
           </div>
           </div>
@@ -144,7 +145,7 @@ export default function LogInPage() {
 
         <div className="flex items-center justify-center h-screen"> 
         <div className=' p-5 text-center'>
-          <div>Login</div>
+          <div className='text-transparent bg-gradient-to-r from-midnight to-tahiti bg-clip-text text-3xl font-bold font-nunito mb-3'>Login</div>
           <div>
           <form onSubmit={handleLoginSubmit}>
           <div>
@@ -154,7 +155,7 @@ export default function LogInPage() {
           value={loginForm.email}
           onChange={handleLoginChange}
           placeholder="Email"
-          className="m-2"
+          className="m-2 h-10 w-64 rounded-xl border-2 placeholder text-black outline-none indent-2"
         />
         </div>
         <div>
@@ -164,18 +165,18 @@ export default function LogInPage() {
           value={loginForm.password}
           onChange={handleLoginChange}
           placeholder="Password"
-          className="m-2"
+          className="m-2 h-10 w-64 rounded-xl border-2 placeholder text-black outline-none indent-2"
         />
         </div>
         <div>
-            <button type="submit">Login</button>
+            <button type="submit" className='m-2 h-10 w-64 rounded-xl border-2 placeholder text-white outline-none'>Login</button>
             </div>
           </form>
           </div>
           <div>
           <p>
             Don't have an account?{' '}
-            <button onClick={toggleSignupForm}>Sign Up</button>
+            <button onClick={toggleSignupForm} className='text-transparent bg-gradient-to-r from-midnight to-tahiti bg-clip-text text-lg font-bold font-nunito mb-3'>  | Signup</button>
           </p>
           </div>
         </div>
