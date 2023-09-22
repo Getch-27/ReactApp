@@ -59,7 +59,7 @@ export default function Home() {
           <h1 className="font-martian  text-2xl w-96 text-white mt-2 p-3">
             What is Enderase
           </h1>
-          <p className="bg-gradient-to-r from-secondary from-90% to-transoarent w-2/3 text-dim-White py-3 px-6 rounded font-nunito">
+          <p className= " m-auto md:m-6 bg-gradient-to-br from-secondary from-70% to-transoarent md:w-2/3 w-128 text-dim-White py-3 px-6 rounded font-nunito">
             Enderase is an innovative legal knowledge chatbot solution designed
             to address the legal knowledge gap in Ethiopia. It serves as a
             valuable resource for individuals, businesses, startups, and legal
