@@ -25,7 +25,7 @@ export const SideMenu = () => {
   };
   
  return (
-   <motion.nav initial={false} animate={isOpen ? "open" : "closed"}>
+   <motion.nav initial={false} animate={isOpen ? "open" : "closed" }>
      <MenuToggle toggle={() => toggleOpen()} className=" m-auto" />
 
      <motion.ul className="w-44 absolute bg-white p-1 right-5 rounded-md shadow-black shadow-md overflow-hidden" variants={variants}>
@@ -43,7 +43,7 @@ const menuList = [
   },
   { icon :<LockOpenRoundedIcon />,
     text: "LogIn/Signin",
-    link: "/login"
+    link: "/LogInPage"
   },
   { icon :<PlayArrowRoundedIcon />,
     text: "Get Started",

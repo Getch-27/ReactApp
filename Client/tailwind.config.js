@@ -15,6 +15,7 @@ export default {
       transparent: 'transparent',
       primary: '#030F1E' ,
       secondary: '#01254D',
+      'dim-White' : '#ffffffcb',
       'black' : '#000000',
       'white' : '#ffffff',
       'midnight': '#40E8F2',
