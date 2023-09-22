@@ -30,13 +30,43 @@ export default function LogInPage() {
   const handleLoginSubmit = (e) => {
     e.preventDefault();
     console.log("Success!", loginForm.email, loginForm.password)
-    // Handle login form submission
-    // login logic here
+    
   };
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
-    console.log("Success!", signupForm.email, signupForm.password, signupForm.confirmPassword)
+
+    // Check if name, email, or password is empty
+    if (signupForm.name.trim() === '' || signupForm.email.trim() === '' || signupForm.password.trim() === '' || signupForm.confirmPassword.trim() === '') {
+      console.log('Please fill in all the required fields.');
+      return;
+    }
+
+    // Perform validation
+    const nameCheck = /^[a-zA-Z0-9_]{1,10}$/;
+    const passwordCheck = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    const emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!nameCheck.test(signupForm.name)) {
+      console.log('Username must contain only letters, numbers, and underscores (up to 10 characters).');
+      return;
+    }
+    if (!passwordCheck.test(signupForm.password)) {
+      console.log('Password must be at least 8 characters long and include at least one letter, one number, and one special character.');
+      return;
+    }
+    if (!emailCheck.test(signupForm.email)) {
+      console.log('Invalid email address.');
+      return;
+    }
+
+    // Check if password and confirm password match
+    if (signupForm.password !== signupForm.confirmPassword) {
+      alert('Confirm your password correctly.');
+      return;
+    }
+
+    console.log("Success!", signupForm.name, signupForm.email, signupForm.password, signupForm.confirmPassword)
     // Handle signup form submission
     // signup logic here
   };
@@ -46,7 +76,7 @@ export default function LogInPage() {
   };
 
   return (
-    <div className="text-white">
+    <div className=" text-midnight">
       {signupFormVisible ? (
         <div className="flex items-center justify-center h-screen">
           <div className='border p-5 text-center'>
