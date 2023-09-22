@@ -16,6 +16,8 @@ export default function LogInPage() {
 
   const [signupFormVisible, setSignupFormVisible] = useState(false);
 
+  const [error, setError] = useState('');
+
   const handleLoginChange = (e) => {
     setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
     //console.log(loginForm.email, loginForm.password)
@@ -38,7 +40,7 @@ export default function LogInPage() {
 
     // Check if name, email, or password is empty
     if (signupForm.name.trim() === '' || signupForm.email.trim() === '' || signupForm.password.trim() === '' || signupForm.confirmPassword.trim() === '') {
-      console.log('Please fill in all the required fields.');
+      setError('Please fill in all the required fields.');
       return;
     }
 
@@ -48,21 +50,21 @@ export default function LogInPage() {
     const emailCheck = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!nameCheck.test(signupForm.name)) {
-      console.log('Username must contain only letters, numbers, and underscores (up to 10 characters).');
+      setError('Username must contain only letters, numbers, and underscores (up to 10 characters).');
       return;
     }
     if (!passwordCheck.test(signupForm.password)) {
-      console.log('Password must be at least 8 characters long and include at least one letter, one number, and one special character.');
+      setError('Password must be at least 8 characters long and include at least one letter, one number, and one special character.');
       return;
     }
     if (!emailCheck.test(signupForm.email)) {
-      console.log('Invalid email address.');
+      setError('Invalid email address.');
       return;
     }
 
     // Check if password and confirm password match
     if (signupForm.password !== signupForm.confirmPassword) {
-      alert('Confirm your password correctly.');
+      setError('Confirm your password correctly.');
       return;
     }
 
@@ -79,7 +81,7 @@ export default function LogInPage() {
     <div className=" text-midnight">
       {signupFormVisible ? (
         <div className="flex items-center justify-center h-screen">
-          <div className='border p-5 text-center'>
+          <div className='text-center'>
           <div>Signup</div>
           <div>
           <form onSubmit={handleSignupSubmit}>
@@ -124,6 +126,7 @@ export default function LogInPage() {
         />
         </div>
         <div>
+        <p className=' text-tahiti m-2'>{error}</p>
           <button type="submit">Signup</button>
           </div>
           </form>
@@ -140,7 +143,7 @@ export default function LogInPage() {
       ) : (
 
         <div className="flex items-center justify-center h-screen"> 
-        <div className='border p-5 text-center'>
+        <div className=' p-5 text-center'>
           <div>Login</div>
           <div>
           <form onSubmit={handleLoginSubmit}>
