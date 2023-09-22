@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import NavigationBar from '../../Components/NavBar/NavigationBar';
 
 export default function LogInPage() {
   const [loginForm, setLoginForm] = useState({
@@ -79,6 +80,7 @@ export default function LogInPage() {
 
   return (
     <div className=" text-white">
+    <NavigationBar />
       {signupFormVisible ? (
         <div className="flex items-center justify-center h-screen">
           <div className='text-center p-5'>

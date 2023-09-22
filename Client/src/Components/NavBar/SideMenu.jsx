@@ -14,12 +14,14 @@ export const SideMenu = () => {
     open: {
       display : "block",
       opacity :1 ,
+       scale : 1,
     
       transition: { staggerChildren: 0.07, delayChildren: 0.2 }
     },
     closed: {
       display : "none",
       opacity : 0,
+      scale : 0,
       transition: { staggerChildren: 0.05, staggerDirection: -1 }
     }
   };
@@ -28,7 +30,7 @@ export const SideMenu = () => {
    <motion.nav initial={false} animate={isOpen ? "open" : "closed" }>
      <MenuToggle toggle={() => toggleOpen()} className=" m-auto" />
 
-     <motion.ul className="w-44 absolute bg-white p-1 right-5 rounded-md shadow-black shadow-md overflow-hidden" variants={variants}>
+     <motion.ul className="w-44 absolute bg-white p-1 right-5 rounded-md shadow-black shadow-md overflow-hidden z-20 h-60" variants={variants}>
        {menuList.map((list ,index) => (
          <MenuItem i={index} key={index} text ={list.text} link ={list.link} icon ={list.icon}/>
        ))}

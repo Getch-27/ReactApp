@@ -18,25 +18,26 @@ export default function Home() {
       <section className="h-full ">
         <NavigationBar />
 
-        <h1 className="EnderaseHero mt-6 font-martian bg-gradient-to-b from-midnight to-white m-auto w-128 font-thin text-transparent bg-clip-text text-center">
+        <h1 className="EnderaseHero text-[2.25rem]  md:text-[7rem] mt-6 font-martian bg-gradient-to-b from-midnight to-white m-auto w-128 font-thin text-transparent bg-clip-text text-center">
           ENDERASE
         </h1>
-        <div className="flex justify-between w-128 mx-auto items-start p-10">
-          <div className="mt-2">
-            <h1 className="font-martian  text-2xl w-96 text-white">
-              Robust <span className=" text-midnight">Legal AI Assistance</span>{" "}
+        <div className="grid md:grid-cols-2 w-128   py-10 m-auto">
+          <div className="py-9  order-2 md:order-1 flex flex-col justify-center items-center md:items-start">
+            <h1 className="font-martian md:text-4xl  text-2xl w-128 md:w-2/3 text-white">
+              Robust <span className=" text-midnight">Legal AI Assistance </span> 
               at Your Service.
               <span className=" text-metal">24/7</span>
             </h1>
 
             <Button
               text="START CHAT"
-              styles="mt-8  bg-gradient-to-r from-midnight to-metal rounded-2xl  border-metal font-bold px-6 py-3 text-white "
+              styles="mt-8 bg-gradient-to-r from-midnight to-metal rounded-2xl  border-metal font-bold py-4 px-8  text-white "
             />
           </div>
+
           <motion.img
             animate={{
-              x: [34, 36, 35, 34],
+              x: [-34, -36, -35, -34],
               y: [34, 36, 35, 34],
             }}
             transition={{
@@ -46,7 +47,7 @@ export default function Home() {
               repeat: Infinity,
             }}
             src={Robot}
-            className=" w-96 mt-0"
+            className=" w-64 md:w-96 m-auto  order-1 md:order-1"
           ></motion.img>
         </div>
       </section>
