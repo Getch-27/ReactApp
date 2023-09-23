@@ -1,10 +1,14 @@
 .app{
-  
-  overflow: hidden;
+
+
+ 
   background: radial-gradient(ellipse at top ,#030f1e 60% , #011833 150%);
 }
 
 .EnderaseHero{
   letter-spacing: 0.1em;
   line-height: 1;
+}
+.element {
+ overflow-x: hidden;
 }

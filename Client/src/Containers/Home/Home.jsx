@@ -21,7 +21,7 @@ export default function Home() {
         <h1 className="EnderaseHero text-[2.25rem]  md:text-[7rem] mt-6 font-martian bg-gradient-to-b from-midnight to-white m-auto w-128 font-thin text-transparent bg-clip-text text-center">
           ENDERASE
         </h1>
-        <div className="grid md:grid-cols-2 w-128   py-10 m-auto">
+        <div className="grid md:grid-cols-2 w-128    py-10 m-auto">
           <div className="py-9  order-2 md:order-1 flex flex-col justify-center items-center md:items-start">
             <h1 className="font-martian md:text-4xl  text-2xl w-128 md:w-2/3 text-white">
               Robust <span className=" text-midnight">Legal AI Assistance </span> 
@@ -47,7 +47,7 @@ export default function Home() {
               repeat: Infinity,
             }}
             src={Robot}
-            className=" w-64 md:w-96 m-auto  order-1 md:order-1"
+            className="w-64 md:w-96 ml-auto md:m-auto  order-1 md:order-1"
           ></motion.img>
         </div>
       </section>
@@ -56,7 +56,7 @@ export default function Home() {
 
       <section className=" descripion bg-primary">
         <div className="p-6">
-          <h1 className="font-martian  text-2xl w-96 text-white mt-2 p-3">
+          <h1 className="font-martian  text-2xl w-128 text-white mt-2 p-3">
             What is Enderase
           </h1>
           <p className= " m-auto md:m-6 bg-gradient-to-br from-secondary from-70% to-transoarent md:w-2/3 w-128 text-dim-White py-3 px-6 rounded font-nunito">
@@ -98,16 +98,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      
       {/* alternative platforms page */}
-
-      <secton>
+       
+      <secton className=" overflow-hidden">
       <h1 className="font-martian bg-gradient-to-r from-tahiti to-metal bg-clip-text  text-2xl w-128 m-auto text-center text-transparent mt-2 p-3">
             Our Platforms
           </h1>
           <Platform/>
       </secton>
-      <section className='h-full'>
+      <section className=' overflow-hidden'>
         <h1>Contuct Us</h1>
       </section>
     </>
