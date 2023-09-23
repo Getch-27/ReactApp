@@ -36,7 +36,7 @@ const Card = ({ card }) => {
         <div
           style={{
             backgroundImage: `url(${card.url})`,
-            backgroundSize: "",
+            backgroundSize: "cover",
             backgroundPosition: "center",
           }}
           className="absolute inset-0 z-0 transition-transform duration-300 flex bg-no-repeat"
@@ -46,13 +46,13 @@ const Card = ({ card }) => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.5 }}
-            className=" bg-white/10 z-10 backdrop-filter backdrop-blur-lg shadow-lg w-3/4 p-6 h-80 m-auto m-76 rounded-lg flex flex-col justify-center items-center"
+            className=" bg-white/5 z-10 backdrop-filter backdrop-blur-lg shadow-lg w-3/4 p-6 h-80 m-auto rounded-lg flex flex-col justify-center items-center"
           >
-            <h1 className="font-martian text-metal text-xl m-4">
+            <h1 className="font-martian text-metal text-2xl m-4 font-bold text-center">
               {card.title}
             </h1>
-            <h3 className="font-inter mb-4 text-secondary ">{card.heading}</h3>
-            <p className="font-inter">{card.pahragraph}</p>
+            <h3 className=" font-roboto font-bold text-lg mb-4 text-secondary ">{card.heading}</h3>
+            <p className="font-roboto font-thin text-sm md:px-40 text-center">{card.pahragraph}</p>
             <Button
               text="START CHAT"
               styles="mt-8  bg-gradient-to-r from-midnight to-metal rounded-2xl  border-metal font-bold px-6 py-3 text-white "
@@ -68,21 +68,22 @@ const Card = ({ card }) => {
  
  const cards = [
   {
-    url: TelegramImage,
-    title: "Enderase Telegram Bot",
+    url: AndroidImage,
+    title: "Enderase Android App",
     heading : "Get Legal Wisdom on Telegram",
-    pahragraph : " Your 24/7 Legal Assistant in Telegram. Instant, reliable answers to your legal questions. Simplify Ethiopian law with every chat.",
+    pahragraph : "Access accurate legal insights anytime, anywhere. Your trusted guide for legal decisions.",
     link :"/dshsjh",
     id: 1,
   },
   {
-    url: AndroidImage,
-    title: "Enderase Android App",
+    url: TelegramImage,
+    title: "Enderase Telegram Bot",
     heading : "Get Legal Wisdom on Telegram",
-    pahragraph : " . Access accurate legal insights anytime, anywhere. Your trusted guide for legal decisions.",
+    pahragraph : "Your 24/7 Legal Assistant in Telegram. Instant, reliable answers to your legal questions. Simplify Ethiopian law with every chat.",
     link :"/dshsjh",
     id: 2,
   },
+ 
  
 ];
 
