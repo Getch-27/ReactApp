@@ -4,13 +4,6 @@ import { useRef } from "react";
 import TelegramImage from "../../assets/images/telegram.png"
 import AndroidImage from "../../assets/images/android.jpg"
 import Button from "../Button";
-const Example = () => {
-  return (
-    
-      <HorizontalScrollCarousel />
-      
-  );
-};
 
 const HorizontalScrollCarousel = () => {
   const targetRef = useRef(null);
@@ -59,7 +52,7 @@ const Card = ({ card }) => {
     </div>
   );
 };
- export default Example;
+ export default HorizontalScrollCarousel;
 
  
  const cards = [
