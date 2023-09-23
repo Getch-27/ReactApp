@@ -5,16 +5,13 @@ import './App.css' // Importing the associated CSS styles
 import { Routes , Route } from 'react-router'
 import Home from './Containers/Home/Home';
 import LogInPage from './Containers/Autentication/LogInPage';
-import NavigationBar from './Components/NavBar/NavigationBar';
-import Navigate from './Containers/Home/Navigate';
 function App() {
   
   return (
     <div className='app'>
     
     <Routes>
-    <Route path='/' element={<Navigate />}/>
-    <Route path='/Home' element={<Home/>} />
+    <Route path='/' element={<Home/>}/>
     <Route path='/LogInPage' element={<LogInPage/>} />
     </Routes>
 

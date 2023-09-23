@@ -41,7 +41,7 @@ export const SideMenu = () => {
 const menuList = [
   { icon :<HomeRoundedIcon />,
     text: "Home",
-    link: "/Home"
+    link: "/"
   },
   { icon :<LockOpenRoundedIcon />,
     text: "LogIn/Signin",

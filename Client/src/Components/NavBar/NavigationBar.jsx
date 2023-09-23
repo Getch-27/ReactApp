@@ -26,4 +26,3 @@ export default function NavigationBar() {
   
   )
 }
-const itemIds = [0, 1, 2, 3, 4];
