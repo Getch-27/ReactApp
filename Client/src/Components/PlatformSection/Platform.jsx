@@ -1,8 +1,8 @@
 
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
-import TelegramImage from "../../assets/images/telegramBot.png"
-import AndroidImage from "../../assets/images/android.jpg"
+import TelegramImage from "../../assets/images/telegramRemove.png"
+import AndroidImage from "../../assets/images/angroidRemoved2.png"
 import Button from "../Button";
 
 const HorizontalScrollCarousel = () => {
@@ -36,7 +36,7 @@ const Card = ({ card }) => {
         <div
           style={{
             backgroundImage: `url(${card.url})`,
-            backgroundSize: "cover",
+            backgroundSize: "",
             backgroundPosition: "center",
           }}
           className="absolute inset-0 z-0 transition-transform duration-300 flex bg-no-repeat"
@@ -45,7 +45,7 @@ const Card = ({ card }) => {
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.3, duration: 0.5 }}
+            transition={{ delay: 0.5, duration: 0.5 }}
             className=" bg-white/5 z-10 backdrop-filter backdrop-blur-lg shadow-lg w-3/4 p-6 h-80 m-auto rounded-lg flex flex-col justify-center items-center"
           >
             <h1 className="font-martian text-metal text-2xl m-4 font-bold text-center">
