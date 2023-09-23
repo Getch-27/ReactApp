@@ -8,8 +8,13 @@ import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import Groups2SharpIcon from '@mui/icons-material/Groups2Sharp';
 import ContactMailRoundedIcon from '@mui/icons-material/ContactMailRounded';
 
+//  `SideMenu` component displays a side menu that can be toggled open or closed.
 export const SideMenu = () => {
+
+  // useCycle is a custom hook from framer-motion that toggles between two values.
   const [isOpen, toggleOpen] = useCycle(false, true);
+
+  // Variants for the motion animations for ul.
   const variants = {
     open: {
       display : "block",
@@ -28,16 +33,22 @@ export const SideMenu = () => {
   
  return (
    <motion.nav initial={false} animate={isOpen ? "open" : "closed" }>
+
+    {/* MenuToggle  a custom component for toggling the menu */}
      <MenuToggle toggle={() => toggleOpen()} className=" m-auto" />
 
      <motion.ul className="w-44 absolute bg-white p-1 right-5 rounded-md shadow-black shadow-md overflow-hidden z-20 h-60" variants={variants}>
        {menuList.map((list ,index) => (
+
+         // MenuItem is a custom component for rendering menu items
          <MenuItem i={index} key={index} text ={list.text} link ={list.link} icon ={list.icon}/>
        ))}
      </motion.ul>
    </motion.nav>
  );
 };
+
+// Array of menu items with icons, text, and links
 const menuList = [
   { icon :<HomeRoundedIcon />,
     text: "Home",

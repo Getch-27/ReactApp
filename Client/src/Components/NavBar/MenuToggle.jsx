@@ -1,15 +1,27 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 
-const Path = props => (
-  <motion.path
-    fill="transparent"
-    strokeWidth="3"
-    stroke="#df2672"
-    strokeLinecap="round"
-    {...props}
-  />
-);
+/**
+ * `Path` is a sub-component used to define SVG path elements with motion animations.
+ * @param {object} props - SVG path properties.
+ */
+
+function Path(props) {
+  return (
+    <motion.path
+      fill="transparent"
+      strokeWidth="3"
+      stroke="#df2672"
+      strokeLinecap="round"
+      {...props} />
+  );
+}
+
+/**
+ * `MenuToggle` is a React component that renders a button for toggling the menu.
+ * @param {object} props - Component properties.
+ * @param {function} props.toggle - Function to handle the menu toggle action.
+ */
 
 export const MenuToggle = ({ toggle }) => (
   <button onClick={toggle} >
