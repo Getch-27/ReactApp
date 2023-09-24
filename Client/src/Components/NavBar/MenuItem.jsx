@@ -2,6 +2,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 
+// Variants for the motion animations for li.
 const variants = {
   open: {
     y: 0,
@@ -18,6 +19,16 @@ const variants = {
     }
   }
 };
+
+
+/**
+ * `MenuItem` is a React component responsible for rendering a single menu item.
+ * @param {object} props - Component properties.
+ * @param {number} props.i - Index of the menu item.
+ * @param {object} props.icon - React component representing the menu item icon.
+ * @param {string} props.text - Text content of the menu item.
+ * @param {string} props.link - URL link to navigate when the menu item is clicked.
+ */
 
 export const MenuItem = ({ i ,icon ,text ,link} ) => {
    return (

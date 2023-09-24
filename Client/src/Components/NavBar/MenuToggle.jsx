@@ -1,6 +1,11 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 
+/**
+ * `Path` is a sub-component used to define SVG path elements with motion animations.
+ * @param {object} props - SVG path properties.
+ */
+
 const Path = props => (
   <motion.path
     fill="transparent"
@@ -10,16 +15,20 @@ const Path = props => (
     {...props}
   />
 );
-
+/**
+ * `MenuToggle` is a React component that renders a button for toggling the menu.
+ * @param {object} props - Component properties.
+ * @param {function} props.toggle - Function to handle the menu toggle action.
+ */
 export const MenuToggle = ({ toggle }) => (
   <button onClick={toggle} >
     <motion.svg  whileHover={{
     scale: 1.2,
     transition: { duration: .3 },
    }}
-  whileTap={{ scale: 0.9  , outline : "none"}} 
+  whileTap={{ scale: 0.6  , outline : "none"}} 
   
-  width="50" height="23" viewBox="0 0 23 23" >
+  width="55" height="28" viewBox="0 0 23 23" >
    
       <Path 
         variants={{
