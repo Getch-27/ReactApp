@@ -60,7 +60,7 @@ const menuList = [
   },
   { icon :<PlayArrowRoundedIcon />,
     text: "Get Started",
-    link: "/chat"
+    link: "/Chat"
   },
   { icon :<Groups2SharpIcon />,
     text: "About Us",

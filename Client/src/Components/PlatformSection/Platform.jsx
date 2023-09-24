@@ -45,7 +45,7 @@ const Card = ({ card }) => {
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.5 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
             className=" bg-white/5 z-10 backdrop-filter backdrop-blur-lg shadow-lg w-3/4 p-6 h-80 m-auto rounded-lg flex flex-col justify-center items-center"
           >
             <h1 className="font-martian text-metal text-2xl m-4 font-bold text-center">

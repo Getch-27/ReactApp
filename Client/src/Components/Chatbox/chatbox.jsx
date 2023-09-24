@@ -5,8 +5,8 @@ import TypingAnimation from "./typingAnim/TypingAnimation";
 import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import MessageContext from "./MessageContext/contetxt";
 
-import User from "./../../images/User.png";
-import Robot from "./../../images/Robot.png";
+import User from "./../../assets/images/User.png";
+import Robot from "./../../assets/images/Robot.png";
 
 
 
