@@ -8,12 +8,13 @@ import Robot from "../../assets/images/chatRobot.png"
 
 import NavigationBar from '../../Components/NavBar/NavigationBar';
 import Platform from '../../Components/PlatformSection/Platform';
+import { Email, LinkedIn, Telegram } from '@mui/icons-material';
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
   return (
     <>
-    {/* landing section */}
+      {/* landing section */}
 
       <section className="h-full ">
         <NavigationBar />
@@ -24,7 +25,8 @@ export default function Home() {
         <div className="grid md:grid-cols-2 w-128    py-10 m-auto">
           <div className="py-9  order-2 md:order-1 flex flex-col justify-center items-center md:items-start">
             <h1 className="font-martian md:text-4xl  text-2xl w-128 md:w-2/3 text-white">
-              Robust <span className=" text-midnight">Legal AI Assistance </span> 
+              Robust{" "}
+              <span className=" text-midnight">Legal AI Assistance </span>
               at Your Service.
               <span className=" text-metal">24/7</span>
             </h1>
@@ -59,7 +61,7 @@ export default function Home() {
           <h1 className="font-martian  text-2xl w-128 text-white mt-2 p-3">
             What is Enderase
           </h1>
-          <p className= " m-auto md:m-6 bg-gradient-to-br from-secondary from-70% to-transoarent md:w-2/3 w-128 text-dim-White py-3 px-6 rounded font-nunito">
+          <p className=" m-auto md:m-6 bg-gradient-to-br from-secondary from-70% to-transoarent md:w-2/3 w-128 text-dim-White py-3 px-6 rounded font-nunito">
             Enderase is an innovative legal knowledge chatbot solution designed
             to address the legal knowledge gap in Ethiopia. It serves as a
             valuable resource for individuals, businesses, startups, and legal
@@ -72,24 +74,30 @@ export default function Home() {
             Unlock Your Legal Advantage with Enderase
           </h1>
           <div className="grid sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
-           
             <div>
               <h1 className=" font-martian text-white ">
-              Startups and Entrepreneurs
+                Startups and Entrepreneurs
               </h1>
-              <p className='text-dim-White py-3  '> Gain reliable legal insights during your business's critical initial phase, ensuring a strong foundation for success.</p>
+              <p className="text-dim-White py-3  ">
+                {" "}
+                Gain reliable legal insights during your business's critical
+                initial phase, ensuring a strong foundation for success.
+              </p>
             </div>
             <div>
               <h1 className=" font-martian text-white">
-              Small and Medium Businesses
+                Small and Medium Businesses
               </h1>
-              <p className='text-dim-White py-3  '>Reduce costs by accessing prompt solutions to simple legal queries, enabling your business to thrive.</p>
+              <p className="text-dim-White py-3  ">
+                Reduce costs by accessing prompt solutions to simple legal
+                queries, enabling your business to thrive.
+              </p>
             </div>
             <div>
               <h1 className=" font-martian text-white  ">
                 Law Students, Lawyers, and General Public Users
               </h1>
-              <p className=' text-dim-White py-3 '>
+              <p className=" text-dim-White py-3 ">
                 Streamline document management, boost productivity, and access
                 quick and affordable legal advice, allowing you to focus on core
                 legal work or personal matters.
@@ -98,17 +106,27 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+
       {/* alternative platforms page */}
-       
+
       <secton className=" overflow-hidden">
-      <h1 className="font-martian bg-gradient-to-r from-tahiti to-metal bg-clip-text  text-2xl w-128 m-auto text-center text-transparent mt-2 p-3">
-            Our Platforms
-          </h1>
-          <Platform/>
+        <h1 className="font-martian bg-gradient-to-r from-tahiti to-metal bg-clip-text  text-2xl w-128 m-auto text-center text-transparent mt-2 p-3">
+          Our Platforms
+        </h1>
+        <Platform />
       </secton>
-      <section className=' overflow-hidden'>
-        <h1>Contuct Us</h1>
+      <section className=" overflow-hidden h-1/2">
+        <h1 className="font-martian bg-gradient-to-r from-tahiti to-metal bg-clip-text  text-2xl w-128 m-auto text-center text-transparent mt-2 p-3">
+          Contuct Us
+        </h1>
+        <div className=' my-9 m-auto w-1/4 text-white flex justify-between '>
+          <Telegram />
+          <LinkedIn />
+          <Email />
+       
+        </div>
+        <hr className=' bg-black'></hr>
+        <p> © 2023 EnderaseAi </p>
       </section>
     </>
   );

@@ -6,32 +6,29 @@ import { motion } from "framer-motion";
  * @param {object} props - SVG path properties.
  */
 
-function Path(props) {
-  return (
-    <motion.path
-      fill="transparent"
-      strokeWidth="3"
-      stroke="#df2672"
-      strokeLinecap="round"
-      {...props} />
-  );
-}
-
+const Path = props => (
+  <motion.path
+    fill="transparent"
+    strokeWidth="3"
+    stroke="#df2672"
+    strokeLinecap="round"
+    {...props}
+  />
+);
 /**
  * `MenuToggle` is a React component that renders a button for toggling the menu.
  * @param {object} props - Component properties.
  * @param {function} props.toggle - Function to handle the menu toggle action.
  */
-
 export const MenuToggle = ({ toggle }) => (
   <button onClick={toggle} >
     <motion.svg  whileHover={{
     scale: 1.2,
     transition: { duration: .3 },
    }}
-  whileTap={{ scale: 0.9  , outline : "none"}} 
+  whileTap={{ scale: 0.6  , outline : "none"}} 
   
-  width="50" height="23" viewBox="0 0 23 23" >
+  width="55" height="28" viewBox="0 0 23 23" >
    
       <Path 
         variants={{
