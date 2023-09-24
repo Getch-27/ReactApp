@@ -91,7 +91,7 @@ export default function LogInPage() {
           name="name"
           value={signupForm.name}
           onChange={handleSignupChange}
-          placeholder="Display Name"
+          placeholder="Name"
           className="m-2 h-10 w-64 rounded-xl border-2 placeholder text-black outline-none indent-2"
           style={{ fontSize: '16px' }}
         />
@@ -128,14 +128,14 @@ export default function LogInPage() {
         </div>
         <div>
         <p className=' text-tahiti m-1 text-xs'>{error}</p>
-          <button type="submit" className='m-2 h-10 w-64 rounded-xl border-2 placeholder text-white outline-none'>Signup</button>
+          <button type="submit" className='m-2 h-10 w-64 rounded-xl border-2 border-dim-White placeholder text-white outline-none hover:bg-dim-White hover:text-black'>Signup</button>
           </div>
           </form>
           </div>
           <div>
           <p>
             Already have an account?{' '}
-            <button onClick={toggleSignupForm} className='text-transparent bg-gradient-to-r from-midnight to-tahiti bg-clip-text text-lg font-bold font-nunito mb-3'> | Login</button>
+            <button onClick={toggleSignupForm} className='text-transparent bg-gradient-to-r from-midnight to-tahiti bg-clip-text text-lg font-bold font-nunito mb-3 hover:translate-x-1'> | Login</button>
           </p>
           </div>
           </div>
@@ -169,14 +169,14 @@ export default function LogInPage() {
         />
         </div>
         <div>
-            <button type="submit" className='m-2 h-10 w-64 rounded-xl border-2 placeholder text-white outline-none'>Login</button>
+            <button type="submit" className='m-2 h-10 w-64 rounded-xl border-2 border-dim-White placeholder text-white outline-none hover:bg-dim-White hover:text-black hover:border-dim-white transition ease-in-out'>Login</button>
             </div>
           </form>
           </div>
           <div>
           <p>
             Don't have an account?{' '}
-            <button onClick={toggleSignupForm} className='text-transparent bg-gradient-to-r from-midnight to-tahiti bg-clip-text text-lg font-bold font-nunito mb-3'>  | Signup</button>
+            <button onClick={toggleSignupForm} className='text-transparent bg-gradient-to-r from-midnight to-tahiti bg-clip-text text-lg font-bold font-nunito mb-3 hover:translate-x-1'>  | Signup</button>
           </p>
           </div>
         </div>
